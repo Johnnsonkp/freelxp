@@ -1,21 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 import Image from "next/image";
 import { useRouter } from 'next/router'
-import { ColorExtractor } from "react-color-extractor";
+import useColorThief from "use-color-thief";
 
 import Footer from "./footer";
 
 export default function PostDetail({ post }) {
-  const router = useRouter()
+  const router = useRouter();
+  const { palette } = useColorThief(post.metadata.cover, { format: "hex", colorCount: 6 });
+
+  useEffect(() => {
+    if (palette && palette.length >= 6) {
+      console.log("post.markdown:", post.markdown);
+      console.log("post.metadata:", post.metadata);
+      console.log("palette:", palette);
+
+      if (palette[5]) {
+        const headerContent = document.querySelector("#headerContent");
+        if (headerContent) headerContent.style.backgroundColor = palette[5];
+        document.querySelector("meta[name=theme-color]")?.setAttribute("content", palette[5]);
+        const header = document.querySelector("header");
+        if (header) header.style.backgroundColor = palette[5];
+      }
+
+      if (palette[1]) {
+        const title = document.querySelector("#title");
+        if (title) title.style.color = palette[1];
+      }
+
+      const paletteChildren = document.querySelector("#palette")?.children;
+      if (paletteChildren) {
+        [...paletteChildren].forEach((child, index) => {
+          if (palette[index]) {
+            child.style.backgroundColor = palette[index];
+          }
+        });
+      }
+    }
+  }, [palette]);
 
 
   return (
     <article>
       <meta name="theme-color" />
 
-      <header className="bg-black py-4 md:py-16 h-screen md:h-auto">
+      {/* <header className="bg-black py-4 md:py-16 h-screen md:h-auto"> */}
+      <header id="headerContent" className="py-4 md:py-14 mt-[-3px] h-screen md:h-auto">
         <div className="flex flex-col  gap-12">
           <div className="container max-w-2xl mx-auto px-6 flex justify-between items-center">
             <button
@@ -33,7 +65,7 @@ export default function PostDetail({ post }) {
                 </svg>
               </button>
               <button className="text-white/75 hover:opacity-75 transition duration-200 ease-in-out md:p-2 md:rounded-full md:bg-white/20">
-                <svg xm lns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15"/>
                 </svg>
               </button>
@@ -60,7 +92,7 @@ export default function PostDetail({ post }) {
             <p id="desc" className="mt-2 text-white/75 text-xl">{post.metadata.description}</p>
             <hr className="divide mt-12 mb-4 border-white/20"></hr>
             <div className="flex justify-between items-center text-white/75 text-base">
-              <p>by <span id="author" className="font-medium">Brian Ruiz</span></p>
+              <p>by <span id="author" className="font-medium">John Nkpolukwu</span></p>
               <p id="date">{post.metadata.date}</p>
             </div>
           </div>
@@ -74,27 +106,13 @@ export default function PostDetail({ post }) {
               return <div key={index} className="w-8 h-8" />;
             })}
           </div>
-
-          <ColorExtractor
-            src={post.metadata.cover}
-            getColors={(colors) => {
-              document.querySelector("meta[name=theme-color]").setAttribute("content", colors[5]);
-              document.querySelector("header").style.backgroundColor = colors[5];
-              document.querySelector("#title").style.color = colors[1];
-              [...document.querySelector("#palette").children].forEach(
-                (child, index) => {
-                  child.style.backgroundColor = colors[index];
-                }
-              );
-            }}
-          />
         </div>
       </header>
 
       <ReactMarkdown className="my-12 prose  prose-neutral dark:prose-invert container max-w-2xl mx-auto px-6">
-        {post.markdown}
+        {post.markdown?.parent ?? post.markdown}
       </ReactMarkdown>
-      <Footer />
+      {/* <Footer /> */}
     </article>
   );
 }

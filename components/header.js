@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link'
+import Link from 'next/link';
 import logo from "/public/transparent-logo.png";
 import { motion } from "framer-motion";
 import {useRouter} from 'next/router';
 import {useState} from 'react';
+import {useEffect} from 'react';
 
 const CustomLink = ({ title, href, className }) => {
   const router = useRouter();
@@ -63,10 +64,18 @@ const CustomMobileLink = ({ title, href, className = "", toggle }) => {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (!router.asPath.includes("/posts")) {
+      const header = document.querySelector("header");
+      if (header) header.style.backgroundColor = "transparent";
+    }
+  }, [router])
 
   return (
     <header

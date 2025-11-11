@@ -32,6 +32,7 @@ export function Skills() {
         Skills
       </h2>
 
+      {/* testing */}
       <div className="w-full h-screen relative flex items-center justify-center rounded-full  bg-circularLightWhite dark:text-light dark:bg-circularLightDark sm:!h-[80vh] sm:mt-10 sm:w-[105%]">
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark cursor-pointer dark:bg-circularLight dark:text-dark "

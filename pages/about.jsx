@@ -50,14 +50,14 @@ function about() {
                 About Me
               </h2>
               <p className="font-medium">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <Link
                   target="_blank"
                   href="https://www.linkedin.com/in/john-nkpolukwu-521201138/"
                 >
                   John Nkpolukwu,{" "}
                 </Link>
-                I'm a Melbourne-based{" "}
+                I&apos;m a Melbourne-based{" "}
                 <Link
                   target="_blank"
                   href="https://business.linkedin.com/talent-solutions/resources/how-to-hire-guides/software-developer/job-description"
@@ -67,7 +67,7 @@ function about() {
                 and automation enthusiast, passionate about building seamless user experiences and powerful digital systems across the full stack, from frontend interfaces to backend infrastructure.
               </p>
               <p className="font-medium my-4">
-                Since 2020, I've developed and optimized web applications using React, Next.js, Node.js, Python, and other modern technologies, launching features for e-commerce, health tech, and business automation. My journey has taken me from developing custom themes for agencies and integrating APIs for real world clients to driving technical improvements and workflow automation in fast paced teams. The goal is always the same:{" "}
+                Since 2020, I&apos;ve developed and optimized web applications using React, Next.js, Node.js, Python, and other modern technologies, launching features for e-commerce, health tech, and business automation. My journey has taken me from developing custom themes for agencies and integrating APIs for real world clients to driving technical improvements and workflow automation in fast paced teams. The goal is always the same:{" "}
                 <Link
                   target="_blank"
                   href="https://www.workshopper.com/post/what-is-ux-and-why-is-it-important#:~:text=UX%20Design%20in%20turn%2C%20is,%2C%20efficient%2C%20and%20relevant%20experience."
@@ -77,7 +77,7 @@ function about() {
                 </Link>
               </p>
               <p className="font-medium">
-                Outside the dev world, you'll find me exploring Melbourne, managing creative projects, or enjoying a game of soccer.
+                Outside the dev world, you&apos;ll find me exploring Melbourne, managing creative projects, or enjoying a game of soccer.
               </p>
 
             </div>

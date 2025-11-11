@@ -110,15 +110,15 @@ function AgencyProjects() {
                 <p>CRO include:</p>
                 <ul className="list-disc ml-5">
                   <li>
-                    Added and styled the "in the press" trustbar section on
+                    Added and styled the &quot;in the press&quot; trustbar section on
                     homepage.
                   </li>
                   <li>
-                    Added and styled the "Shop by brand" section above the
+                    Added and styled the &quot;Shop by brand&quot; section above the
                     footer
                   </li>
                   <li>
-                    Created and styled the custom page "press" to design
+                    Created and styled the custom page &quot;press&quot; to design
                     specifications.
                   </li>
                 </ul>

@@ -28,7 +28,7 @@ export const ProfileSectionAlt = () => {
             </div>
 
             <p className="inline-block px-3 py-1 mt-3 rounded-full text-lg font-medium bg-gradient-to-r from-indigo-100 to-indigo-50 text-indigo-700 dark:from-indigo-900 dark:to-indigo-800 dark:text-indigo-300 absolute top-28 left-60">
-              Hi, I'm John 👋
+              Hi, I&apos;m John 👋
             </p>
             {/* <div className="mt-1 flex items-center sm:justify-start justify-center md:justify-start gap-4">
               <a href="https://github.com/username" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-foreground transition">

@@ -23,6 +23,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
           <a
             href={companyLink}
             target="_blank"
+            rel="noreferrer"
             className="text-primary capitalize dark:text-primaryDark"
           >
             @{company}
@@ -158,7 +159,7 @@ export default function Experience() {
                 </li>
                 <li>
                   Responded to inquiries and issues related to My Emergency
-                  Doctor's digital platforms, demonstrating a strong
+                  Doctor&apos;s digital platforms, demonstrating a strong
                   understanding of the technology and offering effective
                   solutions..
                 </li>

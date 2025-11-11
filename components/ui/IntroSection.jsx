@@ -15,8 +15,8 @@ export const IntroSection = () => {
               <span>Hello World! 👋</span>
             </h3>
             <p className="text-foreground leading-relaxed">
-              Hi, I'm <span className="font-semibold">Chinonso John Nkpolukwu</span>
-              —you can call me <span className="font-semibold">John</span>! I'm a
+              Hi, I&apos;m <span className="font-semibold">Chinonso John Nkpolukwu</span>
+              —you can call me <span className="font-semibold">John</span>! I&apos;m a
               passionate software developer and vacation rental host with a deep love
               for all things tech.
             </p>
@@ -48,6 +48,7 @@ export const IntroSection = () => {
                 <a
                   href="https://www.airbnb.com.au/users/show/447493012"
                   target="_blank"
+                  rel="noreferrer"
                   className="text-accent underline hover:text-accent/80 transition-colors"
                 >
                   here

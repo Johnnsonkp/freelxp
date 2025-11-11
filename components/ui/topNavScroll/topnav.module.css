@@ -1,0 +1,47 @@
+.carouselContainer ul li i{
+    margin-right: 5px;
+}
+.list{
+    width: max-content;
+    animation: scroll 80s linear infinite;
+}
+.carouselContainer{
+    width: 100%;
+    background-color: #333;
+    background-color: #1c1c1c;
+    color: #fff !important;
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.carouselContainer ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+.carouselContainer ul li{
+    background: var(--light-blue);
+    color: var(--text-color);
+    padding: 10px 0px;
+    border-radius: 7px;
+    text-wrap: nowrap;
+    font-size: 14px;
+}
+    
+.carouselContainer[data-animated]{
+    overflow: hidden;
+}
+.carouselContainer[data-animated] #list{
+    width: max-content;
+    animation: scroll 80s linear infinite;
+}
+    
+@keyframes scroll{
+    to{
+        translate: calc(-50% - 5px);
+    }
+}

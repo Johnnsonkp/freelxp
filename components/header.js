@@ -1,0 +1,206 @@
+import Image from 'next/image';
+import Link from 'next/link'
+import logo from "/public/transparent-logo.png";
+import { motion } from "framer-motion";
+import {useRouter} from 'next/router';
+import {useState} from 'react';
+
+const CustomLink = ({ title, href, className }) => {
+  const router = useRouter();
+
+  return (
+    <Link
+      href={href}
+      className={`${className} relative group border-r-[0.5px] border-l-[0.5px] border-darkBorder px-8 cursor-pointer h-[100%]`}
+      style={{color: router.asPath === href && "#64BBCD"}}
+    >
+      {title}
+      <span
+        style={{backgroundColor: '#64BBCD'}}
+        className={`
+        h-[3px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
+        ${router.asPath === href ? "w-full" : "w-0"}
+        dark:bg-light overflow-hidden`}
+      >
+        &nbsp;
+      </span>
+    </Link>
+  );
+};
+
+const CustomMobileLink = ({ title, href, className = "", toggle }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    toggle();
+    router.push(href);
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      href={href}
+      className={`${className} relative group border-[#EBF0F5] px-8 text-light dark:text-dark mt-1`}
+      style={{
+        background:
+          router.asPath === href
+            ? "linear-gradient(360deg, rgba(107, 216, 111, 0.8) -94.82%, rgba(49, 239, 195, 0) 70.64%)"
+            : "transparent",
+        color: router.asPath === href && "rgba(22, 163, 73, 1)",
+      }}
+    >
+      {title}
+      <span style={{backgroundColor: 'rgba(107, 216, 111, 1)'}}
+        className={`h-[3px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
+        ${router.asPath === href ? "w-full" : "w-0"}
+        dark:bg-light overflow-hidden`}
+      >
+        &nbsp;
+      </span>
+    </button>
+  );
+};
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <header
+      className={`w-[100%] md:px-20 h-13 py-2 mt-2 font-medium flex items-center m-auto justify-between dark:text-light mb-0 overflow-hidden relative border-darkBorder !sm:px-3`} 
+      style={{boxSizing: "border-box"}}
+    >
+        <Link href="/" className="flex align-middle justify-center items-center">
+          <h1 className="font-bold mt-1 text-lg">CHINONSO</h1>
+          <Image src={logo} className={"mr-4 py-0 px-0 w-9 bg-[#F5F5F5] rounded-[10rem]"} alt="logo"/>
+        </Link>
+        <button
+          className="flex-col justify-center items-center md:hidden"
+          onClick={handleClick}
+        >
+          <span
+            className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+              isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
+            }`}
+          ></span>
+          <span
+            className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
+              isOpen ? "opacity-0" : "opacity-100"
+            }`}
+          ></span>
+          <span
+            className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+              isOpen ? "-rotate-45 translate-y-1" : "translate-y-0.5"
+            }`}
+          ></span>
+        </button>
+      <div className="w-full flex justify-between items-center ml-20 desk-sm:hidden">
+        <nav className="py-0 mt-0">
+          <CustomLink href={"/"} title={"Home"} className={`py-3 px-2 text-black cursor-pointer dark:text-light border-none`} />
+          <CustomLink href={"/about"} title={"About"} className={`py-3 px-5 text-black cursor-pointer dark:text-light border-none`} />
+          <CustomLink
+            href={"/projects"}
+            title={"Projects"}
+            className={"py-3 px-5 text-black cursor-pointer dark:text-light border-none"}
+          />
+          <CustomLink
+            href={"/blog"}
+            title={"Blog"}
+            className={"py-3 px-5 text-black cursor-pointer dark:text-light border-none"}
+          />
+        </nav>
+
+        <nav className="flex items-center justify-center flex-wrap ">
+          <motion.a
+            href="mailto:john.nkp1@gmail.com"
+            target={"_blank"}
+            whileHover={{ y: -0 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-30 mx-3 bg-neonGradient bg-neon-gradient text-[#fff] text-md font-semibold py-2 px-5 rounded-lg "
+          >
+            <button>Get in touch</button>
+          </motion.a>
+        </nav>
+      </div>
+
+      {isOpen ? (
+        <motion.div
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
+        >
+          <nav className="flex items-center flex-col justify-center">
+            <CustomMobileLink
+              href={"/"}
+              title={"Home"}
+              className={`py-3 px-2`}
+              toggle={handleClick}
+            />
+            <CustomMobileLink
+              href={"/about"}
+              title={"About"}
+              className={`py-3 px-5`}
+              toggle={handleClick}
+            />
+            <CustomMobileLink
+              href={"/projects"}
+              title={"Projects"}
+              className={"py-3 px-5"}
+              toggle={handleClick}
+            />
+            <CustomMobileLink
+              href={"/articles"}
+              title={"Articles"}
+              className={"py-3 px-5"}
+              toggle={handleClick}
+            />
+            <CustomMobileLink
+              href={"/study"}
+              title={"Study"}
+              className={"py-3 px-5"}
+              toggle={handleClick}
+            />
+          </nav>
+
+          <nav className="flex items-center justify-center flex-wrap ">
+            <motion.a
+              href="/"
+              target={"_blank"}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3 sm:mx-1"
+            >
+              {/* <TwitterIcon /> */}
+            </motion.a>
+            <motion.a
+              href="https://github.com/Johnnsonkp"
+              target={"_blank"}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3 bg-light dark:bg-dark rounded-full sm:mx-1"
+            >
+              {/* <GithubIcon /> */}
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/john-nkpolukwu-521201138/"
+              target={"_blank"}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3 sm:mx-1"
+            >
+              {/* <LinkedInIcon /> */}
+            </motion.a>
+            {/* <DayNightSwitch /> */}
+          </nav>
+        </motion.div>
+      ) : null}
+      {/* </div> */}
+    </header>
+  );
+};
+
+export default Header;
+

@@ -1,0 +1,40 @@
+.primaryButton {
+  padding-top: 0.8rem;
+  padding-right: 2.5rem;
+  padding-bottom: 0.8rem;
+  padding-left: 2.5rem;
+  border: 1px solid #333;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+  background-color: hsla(0, 0.00%, 100.00%, 0.00);
+  transition-property: color, background-color;
+  transition-duration: 350ms, 350ms;
+  transition-timing-function: ease, ease;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  background-color: aqua;
+  z-index: 10px;
+}
+
+.secondaryButton {
+  padding-top: 0.8rem;
+  padding-right: 2.5rem;
+  padding-bottom: 0.8rem;
+  padding-left: 2.5rem;
+  border: 1px solid #333;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+  background-color: hsla(0, 0.00%, 100.00%, 0.00);
+  transition-property: color, background-color;
+  transition-duration: 350ms, 350ms;
+  transition-timing-function: ease, ease;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1000;
+}

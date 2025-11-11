@@ -1,0 +1,47 @@
+/* Custom desktop-first breakpoints for project components only */
+
+.projectContainer {
+  /* Base styles */
+}
+
+/* 2xl breakpoint - max 1535px */
+@media (max-width: 1535px) {
+  .projectContainer {
+    /* Add your 2xl responsive styles here */
+  }
+}
+
+/* xl breakpoint - max 1279px */
+@media (max-width: 1279px) {
+  .projectContainer {
+    /* Add your xl responsive styles here */
+  }
+}
+
+/* lg breakpoint - max 1023px */
+@media (max-width: 1023px) {
+  .projectContainer {
+    /* Add your lg responsive styles here */
+  }
+}
+
+/* md breakpoint - max 767px */
+@media (max-width: 767px) {
+  .projectContainer {
+    /* Add your md responsive styles here */
+  }
+}
+
+/* sm breakpoint - max 639px */
+@media (max-width: 639px) {
+  .projectContainer {
+    /* Add your sm responsive styles here */
+  }
+}
+
+/* xs breakpoint - max 479px */
+@media (max-width: 479px) {
+  .projectContainer {
+    /* Add your xs responsive styles here */
+  }
+}

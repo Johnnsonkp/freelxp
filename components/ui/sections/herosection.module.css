@@ -1,0 +1,23 @@
+.cover-banner,
+.cover-banner span,
+.cover-banner img {
+  max-width: 1200px !important;
+  border-radius: 24px;
+}
+
+.cover-banner {
+  box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .cover-banner,
+  .cover-banner span,
+  .cover-banner img {
+    border-radius: 0;
+  }
+}
+
+
+.cover-banner, .cover-banner span, .cover-banner img {
+  max-width: 1150px !important; 
+}

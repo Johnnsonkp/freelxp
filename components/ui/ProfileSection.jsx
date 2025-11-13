@@ -9,15 +9,16 @@ export const ProfileSection = () => {
     <section className="relative -mt-28 mb-0 ">
       <div className="container mx-auto px-6 flex flex-col items-center">
         <div className="relative">
-          <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-background shadow-2xl">
+          <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-background shadow-2xl">
             {imgSrc && 
               <SmoothImgLoad 
                 src={imgSrc}
                 alt="Chinonso John Nkpolukwu"
                 className="w-full h-full object-cover"
                 fill={false}
-                width={100}
-                height={100}
+                width={200}
+                height={200}
+                quality={100}
               />}
           </div>
         </div>

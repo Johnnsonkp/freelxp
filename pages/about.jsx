@@ -9,6 +9,7 @@ import Image from "next/image";
 import Layout from "../components/ui/Layout";
 import Link from "next/link";
 import { Skills } from "../components/Skills";
+import SmoothImgLoad from "../components/ui/SmoothImgLoad";
 import profilePic2 from "/public/dev-headshot.jpeg";
 
 const AnimatedNumbers = ({ value }) => {
@@ -42,7 +43,7 @@ function about() {
         <meta name="description" content="About me"></meta>
       </Head>
       <main className="flex w-full flex-col items-center justify-center dark:text-light desk-sm:overflow-hidden">
-        <Layout className="pt-16 desk-sm:!p-5">
+        <Layout className="desk-sm:p-5 !pt-10">
           <AnimatedText text="Purposefully Driven!" className="mb-16" />
           <div className="grid w-full grid-cols-8 grid-rows-1 gap-16 desk-sm:flex-col desk-sm:grid-cols-2">
             <div className="col-span-3 flex flex-col items-start justify-start desk-sm:!order-2">
@@ -85,11 +86,12 @@ function about() {
             <div className="col-span-3 h-80 relative rounded-2xl border-2 border-solid border-dark bg-light2 p-8 dark:bg-dark dark:border-light desk-sm:!order-1">
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light2" />
               <div className="w-full h-[280px] overflow-hidden">
-                <Image
+                <SmoothImgLoad 
                   src={profilePic2}
                   alt="Chinonso"
-                  className="w-full h-30 rounded-2xl border-2 border-solid border-dark  bg-[#202020]"
+                  className="w-full rounded-2xl border-2 border-solid border-dark  bg-[#202020]"
                   priority
+                  fill={false}
                   sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   33vw"

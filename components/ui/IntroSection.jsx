@@ -3,9 +3,8 @@ import Link from 'next/link';
 
 export const IntroSection = () => {
   return (
-    <section className="py-0 mb-8 ">
+    <section className="py-0 mt-[-18px] mb-8 ">
       <div className="container mx-auto px-6">
-        {/* <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"> */}
         <div className="flex justify-between max-w-6xl mx-auto desk-sm:flex-col desk-sm:gap-6">
           <Card 
             className="md:col-span-2 p-5 bg-card border-border border dark:border-darkBorder flex-[6] dark:bg-dark2 "

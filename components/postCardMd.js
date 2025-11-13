@@ -1,8 +1,10 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Menu, Transition } from "@headlessui/react";
 
 import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
+import Image from "next/image";
+import Link from "next/link";
+import { ShimmerPlaceholder } from "./ui/ShimmerPlaceholder";
+import SmoothImgLoad from "./ui/SmoothImgLoad";
 
 export default function PostCardSm({ post, index }) {
   return (
@@ -26,12 +28,26 @@ export default function PostCardSm({ post, index }) {
           </p>
         </div>
         <div className="relative overflow-hidden aspect-video rounded-lg">
-          <Image
+          {/* <Image
             fill
-            className="object-cover"
+            className={`object-cover ${post.cover? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
             src={post.cover}
             alt={post.title}
-          />
+          /> */}
+          {/* {post.cover? 
+            <Image
+              fill
+              className={`object-cover ${post.cover? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+              src={post.cover}
+              alt={post.title}
+            /> : <ShimmerPlaceholder colorIndex={index % 2 === 0} />} */}
+
+            <SmoothImgLoad 
+              src={post.cover} 
+              alt={post.title} 
+              className={`object-cover `}
+              fill={true} 
+            />
         </div>
       </Link>
       <div className="px-4 py-1 flex justify-between items-center">

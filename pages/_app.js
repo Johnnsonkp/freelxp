@@ -2,7 +2,7 @@ import '../styles/globals.css'
 
 import Footer from '../components/footer';
 import Head from 'next/head';
-import Header from '../components/header';
+import Header from '../components/ui/header/Header.jsx';
 import TopNavInfiniteScroll from '../components/ui/topNavScroll/TopNavScroll';
 
 export default function App({ Component, pageProps }) {

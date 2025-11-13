@@ -36,7 +36,8 @@ export const FeaturedProject = ({
       </Link>
 
       <div className="w-1/2 flex flex-col items-start justify-between pl-6 desk-sm:p-0 desk-sm:w-full">
-        <span className="text-primary font-medium text-xl dark:text-primaryDark">
+        {/* <span className="text-primary font-medium text-xl dark:text-primaryDark"> */}
+        <span className="text-dark font-medium text-xl dark:text-primaryDark">
           {type}
         </span>
         <Link
@@ -87,7 +88,8 @@ export const Project = ({ title, type, img, link, github, summary }) => {
       </Link>
 
       <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-xl dark:text-primaryDark">
+        {/* <span className="text-primary font-medium text-xl dark:text-primaryDark"> */}
+        <span className="text-dark font-medium text-xl dark:text-primaryDark">
           {type}
         </span>
         <Link

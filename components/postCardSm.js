@@ -1,8 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Menu, Transition } from "@headlessui/react";
 
 import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
+import Image from "next/image";
+import Link from "next/link";
+import SmoothImgLoad from "./ui/SmoothImgLoad";
 
 export default function PostCardSm({ post, index }) {
   return (
@@ -24,8 +25,14 @@ export default function PostCardSm({ post, index }) {
           </p>
         </div>
         <div className="relative overflow-hidden min-w-[8rem] w-32 h-32 aspect-square rounded-lg">
-          <Image
+          {/* <Image
             fill
+            className="object-cover"
+            src={post.cover}
+            alt={post.title}
+          /> */}
+          <SmoothImgLoad 
+            fill={true} 
             className="object-cover"
             src={post.cover}
             alt={post.title}

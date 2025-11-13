@@ -5,8 +5,6 @@ import PostList from '../components/postList'
 import React from 'react'
 
 function Blog({ posts }) {
-  if (!posts) return <h1>No posts</h1>;
-
   return (
     <>
       <Head>

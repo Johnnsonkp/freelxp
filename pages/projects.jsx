@@ -18,10 +18,10 @@ function Projects() {
         />
       </Head>
       <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-x-hidden desk-sm:w-[100vw] desk-sm:px-5 ">
-        <Layout className="pt-16 desk-sm:!px-0">
+        <Layout className="!pt-10 desk-sm:!px-0">
           <AnimatedText
             text="Projects"
-            className="mb-16"
+            className="mb-10"
           />
 
           <div className="text-center m-auto flex justify-center">

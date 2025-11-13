@@ -1,10 +1,13 @@
+import './Header.module.css';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import SocialIconNav from './SocialIconNav';
 import logo from "/public/transparent-logo.png";
 import { motion } from "framer-motion";
+import {useEffect} from 'react';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
-import {useEffect} from 'react';
 
 const CustomLink = ({ title, href, className }) => {
   const router = useRouter();
@@ -12,22 +15,27 @@ const CustomLink = ({ title, href, className }) => {
   return (
     <Link
       href={href}
-      className={`${className} relative group border-r-[0.5px] border-l-[0.5px] border-darkBorder px-8 cursor-pointer h-[100%]`}
-      style={{color: router.asPath === href && "#64BBCD"}}
+      className={`${className} text-black hover:text-["#64BBCD"] relative group border-r-[0.5px] border-l-[0.5px] border-darkBorder px-5 cursor-pointer h-[100%] overflow-hidden`}
+      // style={{color: router.asPath === href && "#64BBCD" }}
+      style={{color: router.asPath === href && "#26184A", fontWeight: router.asPath === href && "semi-bold" }}
     >
       {title}
       <span
-        style={{backgroundColor: '#64BBCD'}}
+        // style={{backgroundColor: router.asPath === href && '#64BBCD' }}
+        style={{backgroundColor: router.asPath === href && '#26184A' }}
         className={`
-        h-[3px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
-        ${router.asPath === href ? "w-full" : "w-0"}
-        dark:bg-light overflow-hidden`}
+          ${router.asPath === href ? "w-full" : "w-0"} 
+          h-[2.5px] inline-block absolute left-0 -bottom-0.5 
+          group-hover:w-full transition-[width] ease duration-300 
+          dark:bg-light overflow-hidden z-10 bg-dark hover:bg-["#64BBCD"] dark:text-light
+        `}
       >
         &nbsp;
       </span>
     </Link>
   );
 };
+
 
 const CustomMobileLink = ({ title, href, className = "", toggle }) => {
   const router = useRouter();
@@ -79,9 +87,17 @@ const Header = () => {
 
   return (
     <header
-      className={`w-[100%] md:px-20 h-13 py-2 mt-2 font-medium flex items-center m-auto justify-between dark:text-light mb-0 overflow-hidden relative border-darkBorder !sm:px-3`} 
-      style={{boxSizing: "border-box"}}
+      className={`w-[100%] md:px-20 h-13 py-2 mt-2 font-medium flex items-center m-auto justify-between dark:text-light mb-0 relative border-darkBorder !sm:px-3`} 
+      style={{boxSizing: "border-box border-b-2"}}
     >
+        <span
+          className={`
+          h-[1px] inline-block bg-[#9999993e] absolute left-0 -bottom-[-0.2rem] group-hover:w-full transition-[width] ease duration-300
+          dark:bg-light overflow-hidden w-full z-20`}
+        >
+          &nbsp;
+        </span>
+
         <Link href="/" className="flex align-middle justify-center items-center">
           <h1 className="font-bold mt-1 text-lg">CHINONSO</h1>
           <Image src={logo} className={"mr-4 py-0 px-0 w-9 bg-[#F5F5F5] rounded-[10rem]"} alt="logo"/>
@@ -108,13 +124,14 @@ const Header = () => {
         </button>
       <div className="w-full flex justify-between items-center ml-20 desk-sm:hidden">
         <nav className="py-0 mt-0">
-          <CustomLink href={"/"} title={"Home"} className={`py-3 px-2 text-black cursor-pointer dark:text-light border-none`} />
-          <CustomLink href={"/about"} title={"About"} className={`py-3 px-5 text-black cursor-pointer dark:text-light border-none`} />
+          <CustomLink href={"/"} title={"Home"} className={`py-3 px-2  cursor-pointer`} />
+          <CustomLink href={"/about"} title={"About"} className={`py-3 px-5 cursor-pointer`} />
           <CustomLink
             href={"/projects"}
             title={"Projects"}
             className={"py-3 px-5 text-black cursor-pointer dark:text-light border-none"}
           />
+          
           <CustomLink
             href={"/blog"}
             title={"Blog"}
@@ -123,12 +140,14 @@ const Header = () => {
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap ">
+
+          <SocialIconNav />
           <motion.a
             href="mailto:john.nkp1@gmail.com"
             target={"_blank"}
             whileHover={{ y: -0 }}
             whileTap={{ scale: 0.9 }}
-            className="w-30 mx-3 bg-neonGradient bg-neon-gradient text-[#fff] text-md font-semibold py-2 px-5 rounded-lg "
+            className="w-30 mx-3 bg-neonGradient bg-neon-gradient text-[#fff] text-sm font-semibold py-2 px-5 rounded-md "
           >
             <button>Get in touch</button>
           </motion.a>
@@ -202,7 +221,6 @@ const Header = () => {
             >
               {/* <LinkedInIcon /> */}
             </motion.a>
-            {/* <DayNightSwitch /> */}
           </nav>
         </motion.div>
       ) : null}

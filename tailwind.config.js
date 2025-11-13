@@ -34,8 +34,7 @@ module.exports = {
         "spin-slow": "spin 8s linear infinite",
       },
       backgroundImage: {
-        // 'neon-gradient': "linear-gradient(to bottom, #c0392b, #8e44ad)",
-        'neon-gradient': "linear-gradient(to right, #4f46e5, #ec4899)",
+        'neon-gradient': "linear-gradient(to right, #4f46a5, #ec5899)",
         circularLight:
           "repeating-radial-gradient(rgba(0,0,0,0.4) 2px,#f5f5f5 5px, #f5f5f5 100px)",
         circularLightWhite:

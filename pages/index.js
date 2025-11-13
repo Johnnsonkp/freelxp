@@ -1,13 +1,10 @@
-import Footer from "../components/footer";
 import Head from "next/head";
-import Header from "../components/header";
 import LandingPage from "../components/heroSection";
 import PostList from "../components/postList";
-import TopNavInfiniteScroll from "../components/ui/topNavScroll/TopNavScroll";
 import { getAllPublished } from "../lib/notion";
 
 export default function Home({ posts }) {
-  if (!posts) return <h1>No posts</h1>;
+  // if (!posts) return <h1>No posts</h1>;
 
   return (
     <>
@@ -38,3 +35,4 @@ export const getStaticProps = async () => {
     revalidate: 60,
   };
 };
+

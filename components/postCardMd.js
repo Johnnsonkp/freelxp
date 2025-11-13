@@ -92,7 +92,7 @@ export default function PostCardSm({ post, index }) {
                       navigator.share({
                         title: post.title,
                         url: `/posts/${post.slug}`,
-                        text: "Check out Brian's post!",
+                        text: "Check out John's post!",
                       });
                     }}
                   >

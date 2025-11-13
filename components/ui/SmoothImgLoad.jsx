@@ -2,7 +2,7 @@ import Image from 'next/image';
 import {ShimmerPlaceholder} from './ShimmerPlaceholder';
 import { useState } from 'react';
 
-const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height }) => {
+const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height, priority }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -18,6 +18,7 @@ const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height }) => {
         sizes={sizes || undefined}
         width={width || undefined}
         height={height || undefined}
+        priority={priority || false}
       />
     </>
   );

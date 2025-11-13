@@ -20,7 +20,9 @@ module.exports = {
         dark2: "#1b1b1b",
         light: "#f5f5f5",
         light2: "#fff",
-        primary: "#58E6D9", // 80,230,217
+        // primary: "#58E6D9",
+        primary: "#ec5899",
+        primaryDark: "#ec5899",
         lightGray: "lightGray",
         darkBorder: "rgba(255, 255, 255, 0.1)",
         white: "#fff",

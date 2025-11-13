@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Footer from "./footer";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import SmoothImgLoad from "./ui/SmoothImgLoad";
 import useColorThief from "use-color-thief";
 import { useRouter } from 'next/router'
 
@@ -46,7 +47,7 @@ export default function PostDetail({ post }) {
       <meta name="theme-color" />
 
       {/* <header className="bg-black py-4 md:py-16 h-screen md:h-auto"> */}
-      <header id="headerContent" className="py-4 md:py-14 mt-[-3px] h-screen md:h-auto">
+      <header id="headerContent" className="py-4 md:py-14 mt-[-5px] h-screen md:h-auto">
         <div className="flex flex-col  gap-12">
           <div className="container max-w-2xl mx-auto px-6 flex justify-between items-center">
             <button
@@ -83,7 +84,14 @@ export default function PostDetail({ post }) {
 
           <div className="container max-w-3xl px-6 mx-auto">          
             <div id="picture" className="relative w-[100%] overflow-hidden aspect-video rounded-lg md:rounded-xl shadow-2xl">
-              <Image fill className="object-cover" src={post.metadata.cover} alt={post.metadata.title} priority={"true"}/>
+              {/* <Image fill className="object-cover" src={post.metadata.cover} alt={post.metadata.title} priority={"true"}/> */}
+              <SmoothImgLoad 
+                src={post.metadata.cover}
+                alt={post.metadata.title}
+                className={`object-cover `}
+                fill={true} 
+                priority={"true"}
+              />
             </div>
           </div>
 

@@ -73,19 +73,6 @@ function PersonalProjects() {
           type={"Featured Project"}
         />
       </div>
-
-      {/* <div className="col-span-6 desk-sm:col-span-12 desk-sm:w-[100%] desk-sm:my-10 desk-sm:mx-auto">
-        <Project
-          title={"NextJS Blog"}
-          img={project8}
-          summary={
-            "The Next.js Notion Blog is a modern, fast, and minimalistic blogging platform designed to document my programming journey. Built with Next.js and Notion as a headless CMS,"
-          }
-          link={"https://nextjs-notion-cms-six.vercel.app/"}
-          github={"https://github.com/Johnnsonkp/"}
-          type={"Project"}
-        />
-      </div> */}
       
       <div className="col-span-6 desk-sm:col-span-12 desk-sm:w-[100%] desk-sm:my-10 desk-sm:mx-auto">
         <Project
@@ -120,7 +107,7 @@ function PersonalProjects() {
           summary={
             "A direct booking website for a vacation rental business. Built using wordpress with personal customistions. Connected to a PMS, it enables direct bookings while synchronizing effortlessly with my OTA calendar (Airbnb, VRBO), preventing any potential double bookings and conflicts. "
           }
-          link={"https://citystaysmelbourne.com.au/"}
+          link={"https://citystaysmelbourne.com"}
           github={"/"}
           type={"Direct Booking Website"}
         />

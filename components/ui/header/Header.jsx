@@ -11,23 +11,31 @@ import {useState} from 'react';
 
 const CustomLink = ({ title, href, className }) => {
   const router = useRouter();
+  const highlight = `bg-[#26184A] dark:bg-[#ec5899]`;
+  const highlightText = `text-[#26184A] dark:text-[#ec5899]`;
 
   return (
     <Link
       href={href}
-      className={`${className} text-black hover:text-["#64BBCD"] relative group border-r-[0.5px] border-l-[0.5px] border-darkBorder px-5 cursor-pointer h-[100%] overflow-hidden`}
-      // style={{color: router.asPath === href && "#64BBCD" }}
-      style={{color: router.asPath === href && "#26184A", fontWeight: router.asPath === href && "semi-bold" }}
+      className={`${className} 
+        relative group px-5 
+        cursor-pointer h-[100%] overflow-hidden
+        ${router.asPath === href ? highlightText : "dark:text-light"}
+        group-hover:highlightText
+        `
+      }
+      style={{
+        fontWeight: router.asPath === href && "semi-bold" 
+      }}
     >
       {title}
       <span
-        // style={{backgroundColor: router.asPath === href && '#64BBCD' }}
-        style={{backgroundColor: router.asPath === href && '#26184A' }}
         className={`
           ${router.asPath === href ? "w-full" : "w-0"} 
           h-[2.5px] inline-block absolute left-0 -bottom-0.5 
           group-hover:w-full transition-[width] ease duration-300 
-          dark:bg-light overflow-hidden z-10 bg-dark hover:bg-["#64BBCD"] dark:text-light
+          z-10 bg-dark !hover:w-full
+          ${router.asPath === href && highlight}
         `}
       >
         &nbsp;
@@ -36,7 +44,7 @@ const CustomLink = ({ title, href, className }) => {
   );
 };
 
-
+// overflow-hidden
 const CustomMobileLink = ({ title, href, className = "", toggle }) => {
   const router = useRouter();
 
@@ -93,7 +101,7 @@ const Header = () => {
         <span
           className={`
           h-[1px] inline-block bg-[#9999993e] absolute left-0 -bottom-[-0.2rem] group-hover:w-full transition-[width] ease duration-300
-          dark:bg-light overflow-hidden w-full z-20`}
+          dark:bg-darkBorder overflow-hidden w-full z-20`}
         >
           &nbsp;
         </span>
@@ -124,23 +132,30 @@ const Header = () => {
         </button>
       <div className="w-full flex justify-between items-center ml-20 desk-sm:hidden">
         <nav className="py-0 mt-0">
-          <CustomLink href={"/"} title={"Home"} className={`py-3 px-2  cursor-pointer`} />
-          <CustomLink href={"/about"} title={"About"} className={`py-3 px-5 cursor-pointer`} />
+          <CustomLink 
+            href={"/"} 
+            title={"Home"} 
+            className={`py-3 px-2  cursor-pointer`} 
+          />
+          <CustomLink 
+            href={"/about"} 
+            title={"About"} 
+            className={`py-3 px-5 cursor-pointer `} 
+          />
           <CustomLink
             href={"/projects"}
             title={"Projects"}
-            className={"py-3 px-5 text-black cursor-pointer dark:text-light border-none"}
+            className={"py-3 px-5 text-black cursor-pointer border-none"}
           />
           
           <CustomLink
             href={"/blog"}
             title={"Blog"}
-            className={"py-3 px-5 text-black cursor-pointer dark:text-light border-none"}
+            className={"py-3 px-5 text-black cursor-pointer border-none"}
           />
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap ">
-
           <SocialIconNav />
           <motion.a
             href="mailto:john.nkp1@gmail.com"

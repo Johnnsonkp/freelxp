@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import ReactMarkdown from "react-markdown";
-
-import Image from "next/image";
-import { useRouter } from 'next/router'
-import useColorThief from "use-color-thief";
 
 import Footer from "./footer";
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import useColorThief from "use-color-thief";
+import { useRouter } from 'next/router'
 
 export default function PostDetail({ post }) {
   const router = useRouter();
@@ -39,7 +38,7 @@ export default function PostDetail({ post }) {
         });
       }
     }
-  }, [palette]);
+  }, [palette, post.markdown, post.metadata]);
 
 
   return (

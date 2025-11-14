@@ -95,9 +95,10 @@ const Header = () => {
 
   return (
     <header
-      className={`w-[100%] md:px-20 h-13 py-2 mt-2 font-medium flex items-center m-auto justify-between dark:text-light mb-0 relative border-darkBorder !sm:px-3`} 
+      className={`w-[100%] md:px-20 h-13 py-2 mt-2 font-medium  m-auto  dark:text-light mb-0 relative border-darkBorder !sm:px-3`} 
       style={{boxSizing: "border-box border-b-2"}}
     >
+      <div className='flex justify-between items-center w-full max-w-7xl mx-auto p-0'>
         <span
           className={`
           h-[1px] inline-block bg-[#9999993e] absolute left-0 -bottom-[-0.2rem] group-hover:w-full transition-[width] ease duration-300
@@ -240,6 +241,8 @@ const Header = () => {
         </motion.div>
       ) : null}
       {/* </div> */}
+
+      </div>
     </header>
   );
 };

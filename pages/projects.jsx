@@ -17,8 +17,8 @@ function Projects() {
           content="Some of My Dev projects using HTML, CSS, Javascript, React, Ruby on Rails, Shopify, Wordpress, Nodejs, Typescript and many more"
         />
       </Head>
-      <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-x-hidden desk-sm:w-[100vw] desk-sm:px-5 ">
-        <Layout className="!pt-10 desk-sm:!px-0">
+      <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-x-hidden desk-sm:w-[100vw] desk-sm:px-5  mx-auto">
+        <Layout className="!pt-10 desk-sm:!px-0 max-w-7xl">
           <AnimatedText
             text="Projects"
             className="mb-10"

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const IntroSection = () => {
   return (
-    <section className="py-0 mt-[-18px] mb-0 ">
+    <section className="py-0 mt-[-18px] mb-4">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex justify-between max-w-6xl mx-auto desk-sm:flex-col desk-sm:gap-6">
           <Card 
@@ -22,7 +22,7 @@ export const IntroSection = () => {
             </p>
           </Card>
 
-          <div>
+          <div className='mx-5'>
             <Divider orientation="vertical" />
           </div>
 

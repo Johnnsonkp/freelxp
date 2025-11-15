@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="f5a1658a-c52b-4f4e-b795-f389fe7d11e9"></script>
       </Head>
       <main className="flex flex-col gap-1">
         <TopNavInfiniteScroll />

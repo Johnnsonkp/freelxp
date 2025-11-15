@@ -2,6 +2,7 @@
 import { GithubIcon } from "../icons/SocialIcons";
 import Image from "next/image";
 import Link from "next/link";
+import SmoothImgLoad from "../SmoothImgLoad";
 import { motion } from "framer-motion";
 
 const FramerImage = motion(Image);
@@ -22,13 +23,22 @@ export const FeaturedProject = ({
         target="_blank"
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg desk-sm:w-full"
       >
-        <FramerImage
+        {/* <FramerImage
           src={img}
           alt={title}
           className="w-full h-auto border border-solid border-dark rounded-2xl"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
           priority
+          sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  50vw"
+        /> */}
+
+        <SmoothImgLoad 
+          src={img} 
+          alt={title} 
+          className="w-full h-auto border border-solid border-dark rounded-2xl hover:scale-105 transition-transform duration-200" 
           sizes="(max-width: 768px) 100vw,
                   (max-width: 1200px) 50vw,
                   50vw"
@@ -78,12 +88,17 @@ export const Project = ({ title, type, img, link, github, summary }) => {
         target="_blank"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <FramerImage
+        {/* <FramerImage
           src={img}
           alt={title}
           className="w-full h-auto"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
+        /> */}
+        <SmoothImgLoad 
+          src={img} 
+          alt={title} 
+          className="w-full h-auto border border-solid border-dark rounded-2xl hover:scale-105 transition-transform duration-200" 
         />
       </Link>
 

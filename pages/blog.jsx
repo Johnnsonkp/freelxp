@@ -2,7 +2,6 @@ import { getAllPublished, getAllPublishedExcludeYouTube } from '../lib/notion'
 
 import Head from 'next/head'
 import PostList from '../components/postList'
-import React from 'react'
 
 function Blog({ posts }) {
   return (

@@ -1,3 +1,4 @@
+import Divider from "../components/ui/Divider";
 import Head from "next/head";
 import LandingPage from "../components/heroSection";
 import PostList from "../components/postList";
@@ -18,6 +19,7 @@ export default function Home({ posts }) {
       <main className="flex flex-col gap-1">
         <div id="content" className="mb-32 flex flex-col gap-8 md:gap-12">
           <LandingPage />
+          <Divider />
           <PostList posts={posts} />
         </div>
       </main>

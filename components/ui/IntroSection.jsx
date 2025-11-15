@@ -1,10 +1,11 @@
 import {Card} from './card';
+import Divider from './Divider';
 import Link from 'next/link';
 
 export const IntroSection = () => {
   return (
-    <section className="py-0 mt-[-18px] mb-8 ">
-      <div className="container mx-auto px-6">
+    <section className="py-0 mt-[-18px] mb-0 ">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex justify-between max-w-6xl mx-auto desk-sm:flex-col desk-sm:gap-6">
           <Card 
             className="md:col-span-2 p-5 bg-card border-border border dark:border-darkBorder flex-[6] dark:bg-dark2 "
@@ -21,7 +22,9 @@ export const IntroSection = () => {
             </p>
           </Card>
 
-          <hr className="border-accen mx-5" />
+          <div>
+            <Divider orientation="vertical" />
+          </div>
 
           <Card className="p-5 bg-accent/20 border-accent flex-[4] dark:bg-dark2 dark:border-darkBorder">
             <div className="space-y-2">

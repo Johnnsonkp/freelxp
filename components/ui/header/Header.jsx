@@ -3,6 +3,7 @@ import './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import SocialIconNav from './SocialIconNav';
+import SwitchButton from '../buttons/SwitchButton';
 import logo from "/public/transparent-logo.png";
 import { motion } from "framer-motion";
 import {useEffect} from 'react';
@@ -157,7 +158,8 @@ const Header = () => {
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap ">
-          <SocialIconNav />
+          {/* <SocialIconNav /> */}
+          <SwitchButton />
           <motion.a
             href="mailto:john.nkp1@gmail.com"
             target={"_blank"}

@@ -6,12 +6,15 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(10000), // 10 second timeout
+    });
 
     if (!response.ok) {
+      console.error(`Image fetch failed: ${response.status} for ${url}`);
       return res
         .status(response.status)
-        .json({ error: "Failed to fetch image from origin" });
+        .json({ error: "Failed to fetch image from origin", status: response.status });
     }
 
     // Copy the content type from the original image
@@ -25,9 +28,9 @@ export default async function handler(req, res) {
 
     // Pipe the response body to the client
     const body = await response.arrayBuffer();
-    res.status(200).send(Buffer.from(body));
+    return res.status(200).send(Buffer.from(body));
   } catch (err) {
     console.error("Proxy error:", err);
-    res.status(500).json({ error: "Proxy failed", details: err.message });
+    return res.status(500).json({ error: "Proxy failed", details: err.message });
   }
 }

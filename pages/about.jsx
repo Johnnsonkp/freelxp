@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 import AnimatedText from "../components/ui/AnimatedText";
+import Divider from "../components/ui/Divider";
 import Education from "../components/ui/sections/Education";
 import Experience from "../components/Experience";
 import Head from "next/head";
@@ -45,7 +46,7 @@ function about() {
       <main className="flex w-full flex-col items-center justify-center dark:text-light desk-sm:overflow-hidden  mx-auto">
         <Layout className="desk-sm:p-5 !pt-10 max-w-7xl">
           <AnimatedText text="Purposefully Driven!" className="mb-16" />
-          <div className="grid w-full grid-cols-9 grid-rows-1 gap-16 desk-sm:flex-col desk-sm:grid-cols-2">
+          <div className="grid w-full grid-cols-9 grid-rows-1 gap-16 desk-sm:flex-col desk-sm:grid-cols-2 pb-20">
 
             <div className="col-span-3 h-80 relative rounded-2xl border-2 border-solid border-dark bg-light2 p-8 dark:bg-dark dark:border-light desk-sm:!order-1">
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light2" />
@@ -143,36 +144,41 @@ function about() {
             </div> */}
 
             <div className="col-span-2 flex flex-col items-end justify-between desk-sm:flex-row desk-sm:!order-3 desk-sm:text-center desk-sm:!m-auto desk-sm:items-center ">
-              <div className="flex flex-col items-end justify-center desk-sm:items-center desk-sm:!px-2">
-                <span className="inline-block text-7xl font-bold desk-sm:text-5xl">
-                  <AnimatedNumbers value={20} />+
-                </span>
-                <h2 className="text-xl font-meduim capitalize text-dark/75">
-                  satisfied clients
-                </h2>
+              {/* <Divider orientation="vertical"/> */}
+
+
+                <div className="flex flex-col items-end justify-center desk-sm:items-center desk-sm:!px-2">
+                  <span className="inline-block text-7xl font-bold desk-sm:text-5xl">
+                    <AnimatedNumbers value={20} />+
+                  </span>
+                  <h2 className="text-xl font-meduim capitalize text-dark/75">
+                    satisfied clients
+                  </h2>
+                </div>
+
+                <div className="flex flex-col items-end justify-center desk-sm:items-center desk-sm:!px-2">
+                  <span className="inline-block text-7xl font-bold desk-sm:text-5xl">
+                    <AnimatedNumbers value={20} />+
+                  </span>
+                  <h2 className="text-xl font-meduim capitalize text-dark/75">
+                    projects completed
+                  </h2>
+                </div>
+
+                <div className="flex flex-col items-end justify-center desk-sm:!items-center desk-sm:!px-2">
+                  <span className="inline-block text-7xl font-bold desk-sm:text-5xl">
+                    <AnimatedNumbers value={3} />+
+                  </span>
+                  <h2 className="text-xl font-meduim capitalize text-dark/75">
+                    years of experience
+                  </h2>
+                </div>
               </div>
 
-              <div className="flex flex-col items-end justify-center desk-sm:items-center desk-sm:!px-2">
-                <span className="inline-block text-7xl font-bold desk-sm:text-5xl">
-                  <AnimatedNumbers value={20} />+
-                </span>
-                <h2 className="text-xl font-meduim capitalize text-dark/75">
-                  projects completed
-                </h2>
-              </div>
-
-              <div className="flex flex-col items-end justify-center desk-sm:!items-center desk-sm:!px-2">
-                <span className="inline-block text-7xl font-bold desk-sm:text-5xl">
-                  <AnimatedNumbers value={3} />+
-                </span>
-                <h2 className="text-xl font-meduim capitalize text-dark/75">
-                  years of experience
-                </h2>
-              </div>
-            </div>
           </div>
-          <hr className="mt-8" />
+          {/* <hr className="mt-8" /> */}
           {/* <StillCarousel /> */}
+          <Divider orientation="horizontal"/>
           <Skills />
           <Experience />
           <Education />

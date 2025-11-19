@@ -1,5 +1,6 @@
 import { ProfileSectionAlt } from "./sections/ProfileSectionAlt";
 import SmoothImgLoad from "./SmoothImgLoad";
+import SocialIconNav from "./header/SocialIconNav";
 
 export const ProfileSection = () => {
   const imgSrc = "/headshot-bw.jpeg";
@@ -28,6 +29,7 @@ export const ProfileSection = () => {
         <h3 className="mt-1 text-3xl md:text-2xl font-thin text-foreground">
           Software Engineer | UX/UI Specialist
         </h3>
+        <SocialIconNav />
       </div>
     </section>
   );

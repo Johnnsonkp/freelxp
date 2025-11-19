@@ -71,7 +71,7 @@ export default function PostDetail({ post }) {
           </div>
             
         <div className="flex justify-around max-w-7xl mx-auto sm:flex-col sm:gap-10 md:flex-row md:gap-0">
-          <div className="container max-w-2xl mx-auto px-5 pt-0 flex-col justify-between items-end flex-[0.6]">
+          <div className="container max-w-2xl mx-auto px-2 pt-0 flex-col justify-between items-end flex-[0.6]">
             {/* Control buttons */}
             {/* <div className="w-full flex justify-between">
               <button
@@ -129,7 +129,7 @@ export default function PostDetail({ post }) {
             
           </div>
 
-          <div className="container max-w-8xl mx-auto px-0 flex-col flex-[0.45]">
+          <div className="container max-w-8xl mx-auto px-0 flex-col flex-[0.43]">
 
             <div className="container max-w-8xl px-0 pt-4 ">
               <h1

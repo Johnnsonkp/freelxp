@@ -159,7 +159,7 @@ const Header = () => {
 
         <nav className="flex items-center justify-center flex-wrap ">
           {/* <SocialIconNav /> */}
-          <SwitchButton />
+          {/* <SwitchButton /> */}
           <motion.a
             href="mailto:john.nkp1@gmail.com"
             target={"_blank"}

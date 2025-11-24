@@ -1,17 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Footer from "./footer";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import SmoothImgLoad from "./ui/SmoothImgLoad";
+import { getAllPublishedExcludeYouTube } from "../lib/notion";
 import useColorThief from "use-color-thief";
 import { useRouter } from 'next/router'
 
 export default function PostDetail({ post }) {
   const router = useRouter();
-  const { palette } = useColorThief(post.metadata.cover, { format: "hex", colorCount: 6 });
+  const [selectedPost, setSelectedPost] = useState(post);
+
+  // const getPosts = async () => {
+  //   const data = await getAllPublishedExcludeYouTube();
+  //   return data;
+  // }
+
+  if (!selectedPost) return null;
+
+  const { palette } = useColorThief(selectedPost.metadata.cover, { format: "hex", colorCount: 6 });
   const imgSrc = "/headshot-bw.jpeg";
 
+  
   useEffect(() => {
     if (palette && palette.length >= 6) {
       if (palette[5]) {
@@ -36,7 +47,7 @@ export default function PostDetail({ post }) {
         });
       }
     }
-  }, [palette, post.markdown, post.metadata]);
+  }, [palette, selectedPost.markdown, selectedPost.metadata]);
 
 
   return (
@@ -109,10 +120,10 @@ export default function PostDetail({ post }) {
 
             <div className="container max-w-3xl px-0 mx-auto pt-3">          
               <div id="picture" className="relative w-[100%] overflow-hidden aspect-video rounded-lg md:rounded-xl shadow-2xl">
-                {/* <Image fill className="object-cover" src={post.metadata.cover} alt={post.metadata.title} priority={"true"}/> */}
+                {/* <Image fill className="object-cover" src={selectedPost.metadata.cover} alt={selectedPost.metadata.title} priority={"true"}/> */}
                 <SmoothImgLoad 
-                  src={post.metadata.cover}
-                  alt={post.metadata.title}
+                  src={selectedPost.metadata.cover}
+                  alt={selectedPost.metadata.title}
                   className={`object-cover `}
                   fill={true} 
                   priority={"true"}
@@ -137,12 +148,12 @@ export default function PostDetail({ post }) {
                 className="font-bold text-[30px] md:text-5xl text-white brightness-150 leading-[36px] tracking-tight text-left"
                 style={{textShadow: "2px 3px 5px rgba(0,0,0,0.10)"}}
               >
-                {post.metadata.title}
+                {selectedPost.metadata.title}
               </h1>
             </div>
 
             <div className="">
-              <p id="desc" className="mt-9 text-white/75 text-[1.2rem] font-medium">{post.metadata.description}</p>
+              <p id="desc" className="mt-9 text-white/75 text-[1.2rem] font-medium">{selectedPost.metadata.description}</p>
               <hr className="divide mt-6 mb-1 border-white/20"></hr>
               <div className="flex justify-between items-center text-white/75 text-base py-2">
 
@@ -163,7 +174,7 @@ export default function PostDetail({ post }) {
                   <p className="font-medium inline-block p-2 py-4">John Nkpolukwu</p>
                 </div>
 
-                <p id="date">{post.metadata.date}</p>
+                <p id="date">{selectedPost.metadata.date}</p>
               </div>
             </div>
           </div>
@@ -172,7 +183,7 @@ export default function PostDetail({ post }) {
       </header>
 
       <ReactMarkdown className="my-12 prose  prose-neutral dark:prose-invert container max-w-2xl mx-auto px-6">
-        {post.markdown?.parent ?? post.markdown}
+        {selectedPost.markdown?.parent ?? selectedPost.markdown}
       </ReactMarkdown>
       {/* <Footer /> */}
     </article>

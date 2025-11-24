@@ -2,16 +2,16 @@ function SocialIconNav() {
   return (
     <ul className="flex justify-center mt-2 mb-0 space-x-2">
 
-      <li className="border border-gray-300 p-2 rounded-full aspect-square text-gray-700 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600">
+      <li className="border border-gray-300 dark:border-gray-600 p-2 rounded-full aspect-square text-gray-700 dark:text-gray-300 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600 dark:hover:text-indigo-400 dark:hover:border-indigo-400">
         <a target='_blank' rel="noopener noreferrer" href="https://github.com/Johnnsonkp" className="color-black text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-          <svg className="" width="20" height="20" fill="black" viewBox="0 0 24 24" ariaHidden="true">
+          <svg className="dark:fill-gray-300" width="20" height="20" fill="black" viewBox="0 0 24 24" ariaHidden="true">
             <path fillRule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 clipRule="evenodd"></path>
           </svg>
         </a>
       </li>
-      <li className="border border-gray-300 p-2 rounded-full aspect-square text-gray-700 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600">
+      <li className="border border-gray-300 dark:border-gray-600 p-2 rounded-full aspect-square text-gray-700 dark:text-gray-300 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600 dark:hover:text-indigo-400 dark:hover:border-indigo-400">
         <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/john-nkpolukwu-521201138/"
             className="transition-all focus-within:outline-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -21,16 +21,16 @@ function SocialIconNav() {
             </svg>
           </a>
       </li>
-      <li className="border border-gray-300 p-2 rounded-full aspect-square text-gray-700 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600">
+      <li className="border border-gray-300 dark:border-gray-600 p-2 rounded-full aspect-square text-gray-700 dark:text-gray-300 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600 dark:hover:text-indigo-400 dark:hover:border-indigo-400">
         <a href="/" className="transition-all focus-within:outline-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd"
+              <path fillRule="evenodd" clipRule="evenodd"
                 d="M15.9329 5.13919C16.5667 5.31036 17.0648 5.80978 17.2332 6.44286C17.5396 7.59178 17.5396 9.99044 17.5396 9.99044C17.5396 9.99044 17.5396 12.3891 17.2332 13.538C17.0625 14.1734 16.5643 14.6729 15.9329 14.8417C14.7869 15.1489 10.1889 15.1489 10.1889 15.1489C10.1889 15.1489 5.5932 15.1489 4.44487 14.8417C3.81106 14.6705 3.3129 14.1711 3.14451 13.538C2.83813 12.3891 2.83813 9.99044 2.83813 9.99044C2.83813 9.99044 2.83813 7.59178 3.14451 6.44286C3.31524 5.80744 3.8134 5.30801 4.44487 5.13919C5.5932 4.83203 10.1889 4.83203 10.1889 4.83203C10.1889 4.83203 14.7869 4.83203 15.9329 5.13919ZM12.5393 9.99044L8.72007 12.2015V7.77936L12.5393 9.99044Z"
                 fill="currentColor" />
             </svg>
           </a>
       </li>
-      <li className="border border-gray-300 p-2 rounded-full aspect-square text-gray-700 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600">
+      <li className="border border-gray-300 dark:border-gray-600 p-2 rounded-full aspect-square text-gray-700 dark:text-gray-300 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600 dark:hover:text-indigo-400 dark:hover:border-indigo-400">
         <a href="/"
             className="transition-all focus-within:outline-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

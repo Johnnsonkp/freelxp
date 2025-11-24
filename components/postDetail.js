@@ -11,18 +11,15 @@ import { useRouter } from 'next/router'
 export default function PostDetail({ post }) {
   const router = useRouter();
   const [selectedPost, setSelectedPost] = useState(post);
+  const imgSrc = "/headshot-bw.jpeg";
 
   // const getPosts = async () => {
   //   const data = await getAllPublishedExcludeYouTube();
   //   return data;
   // }
 
-  if (!selectedPost) return null;
+  const { palette } = useColorThief(selectedPost?.metadata?.cover || '', { format: "hex", colorCount: 6 });
 
-  const { palette } = useColorThief(selectedPost.metadata.cover, { format: "hex", colorCount: 6 });
-  const imgSrc = "/headshot-bw.jpeg";
-
-  
   useEffect(() => {
     if (palette && palette.length >= 6) {
       if (palette[5]) {
@@ -47,7 +44,9 @@ export default function PostDetail({ post }) {
         });
       }
     }
-  }, [palette, selectedPost.markdown, selectedPost.metadata]);
+  }, [palette, selectedPost?.markdown, selectedPost?.metadata]);
+
+  if (!selectedPost) return null;
 
 
   return (

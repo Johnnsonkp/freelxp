@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 function SocialIconNav() {
   return (
     <ul className="flex justify-center mt-2 mb-0 space-x-2">
@@ -22,23 +24,23 @@ function SocialIconNav() {
           </a>
       </li>
       <li className="border border-gray-300 dark:border-gray-600 p-2 rounded-full aspect-square text-gray-700 dark:text-gray-300 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600 dark:hover:text-indigo-400 dark:hover:border-indigo-400">
-        <a href="/" className="transition-all focus-within:outline-0">
+        <Link href="/" className="transition-all focus-within:outline-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path fillRule="evenodd" clipRule="evenodd"
                 d="M15.9329 5.13919C16.5667 5.31036 17.0648 5.80978 17.2332 6.44286C17.5396 7.59178 17.5396 9.99044 17.5396 9.99044C17.5396 9.99044 17.5396 12.3891 17.2332 13.538C17.0625 14.1734 16.5643 14.6729 15.9329 14.8417C14.7869 15.1489 10.1889 15.1489 10.1889 15.1489C10.1889 15.1489 5.5932 15.1489 4.44487 14.8417C3.81106 14.6705 3.3129 14.1711 3.14451 13.538C2.83813 12.3891 2.83813 9.99044 2.83813 9.99044C2.83813 9.99044 2.83813 7.59178 3.14451 6.44286C3.31524 5.80744 3.8134 5.30801 4.44487 5.13919C5.5932 4.83203 10.1889 4.83203 10.1889 4.83203C10.1889 4.83203 14.7869 4.83203 15.9329 5.13919ZM12.5393 9.99044L8.72007 12.2015V7.77936L12.5393 9.99044Z"
                 fill="currentColor" />
             </svg>
-          </a>
+        </Link>
       </li>
       <li className="border border-gray-300 dark:border-gray-600 p-2 rounded-full aspect-square text-gray-700 dark:text-gray-300 duration-500 cursor-pointer hover:text-indigo-600 hover:border-indigo-600 focus-within:text-indigo-600 focus-within:border-indigo-600 dark:hover:text-indigo-400 dark:hover:border-indigo-400">
-        <a href="/"
+        <Link href="/"
             className="transition-all focus-within:outline-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
                 d="M11.3214 8.93666L16.4919 3.05566H15.2667L10.7772 8.16205L7.1914 3.05566H3.05566L8.47803 10.7774L3.05566 16.9446H4.28097L9.022 11.552L12.8088 16.9446H16.9446L11.3211 8.93666H11.3214ZM9.64322 10.8455L9.09382 10.0765L4.72246 3.95821H6.60445L10.1322 8.8959L10.6816 9.66481L15.2672 16.083H13.3852L9.64322 10.8458V10.8455Z"
                 fill="currentColor" />
             </svg>
-          </a>
+        </Link>
       </li>
   </ul>
   )

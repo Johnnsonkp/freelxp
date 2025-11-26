@@ -5,7 +5,6 @@ import PostList from "../components/postList";
 import { getAllPublished } from "../lib/notion";
 
 export default function Home({ posts }) {
-  // if (!posts) return <h1>No posts</h1>;
 
   return (
     <>

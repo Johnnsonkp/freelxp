@@ -1,87 +1,24 @@
 import './Header.module.css';
 
+import {CustomLink, CustomMobileLink} from '../buttons/CustomLink';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import SocialIconNav from './SocialIconNav';
 import SwitchButton from '../buttons/SwitchButton';
 import logo from "/public/transparent-logo.png";
 import { motion } from "framer-motion";
+import siteConfig from '../../../site.config';
 import {useEffect} from 'react';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
 
-const CustomLink = ({ title, href, className }) => {
-  const router = useRouter();
-  const highlight = `bg-[#26184A] dark:bg-[#ec5899]`;
-  const highlightText = `text-[#26184A] dark:text-[#ec5899]`;
-
-  return (
-    <Link
-      href={href}
-      className={`${className} 
-        relative group px-5 
-        cursor-pointer h-[100%] overflow-hidden
-        ${router.asPath === href ? highlightText : "dark:text-light"}
-        group-hover:highlightText
-        `
-      }
-      style={{
-        fontWeight: router.asPath === href && "semi-bold" 
-      }}
-    >
-      {title}
-      <span
-        className={`
-          ${router.asPath === href ? "w-full" : "w-0"} 
-          h-[2.5px] inline-block absolute left-0 -bottom-0.5 
-          group-hover:w-full transition-[width] ease duration-300 
-          z-10 bg-dark !hover:w-full
-          ${router.asPath === href && highlight}
-        `}
-      >
-        &nbsp;
-      </span>
-    </Link>
-  );
-};
-
-// overflow-hidden
-const CustomMobileLink = ({ title, href, className = "", toggle }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    toggle();
-    router.push(href);
-  };
-
-  return (
-    <button
-      onClick={handleClick}
-      href={href}
-      className={`${className} relative group border-[#EBF0F5] px-8 text-light dark:text-dark mt-1`}
-      style={{
-        background:
-          router.asPath === href
-            ? "linear-gradient(360deg, rgba(107, 216, 111, 0.8) -94.82%, rgba(49, 239, 195, 0) 70.64%)"
-            : "transparent",
-        color: router.asPath === href && "rgba(22, 163, 73, 1)",
-      }}
-    >
-      {title}
-      <span style={{backgroundColor: 'rgba(107, 216, 111, 1)'}}
-        className={`h-[3px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
-        ${router.asPath === href ? "w-full" : "w-0"}
-        dark:bg-light overflow-hidden`}
-      >
-        &nbsp;
-      </span>
-    </button>
-  );
-};
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const navigationLinks = siteConfig.navigationLinks || [];
+  const siteLogoTitle = siteConfig.siteLogoTitle || 'LOGO';
+  const siteLogo = siteConfig.siteLogo || logo;
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -109,8 +46,8 @@ const Header = () => {
         </span>
 
         <Link href="/" className="flex align-middle justify-center items-center">
-          <h1 className="font-bold mt-1 text-lg">CHINONSO</h1>
-          <Image src={logo} className={"mr-4 py-0 px-0 w-9 bg-[#F5F5F5] rounded-[10rem]"} alt="logo"/>
+          <h1 className="font-bold mt-1 text-lg">{siteLogoTitle}</h1>
+          <Image src={siteLogo} className={"mr-4 py-0 px-0 w-9 bg-[#F5F5F5] rounded-[10rem]"} alt="logo"/>
         </Link>
         <button
           className="flex-col justify-center items-center md:hidden"
@@ -134,27 +71,14 @@ const Header = () => {
         </button>
       <div className="w-full flex justify-between items-center ml-20 desk-sm:hidden">
         <nav className="py-0 mt-0">
-          <CustomLink 
-            href={"/"} 
-            title={"Home"} 
-            className={`py-3 px-2  cursor-pointer`} 
-          />
-          <CustomLink 
-            href={"/about"} 
-            title={"About"} 
-            className={`py-3 px-5 cursor-pointer `} 
-          />
-          <CustomLink
-            href={"/projects"}
-            title={"Projects"}
-            className={"py-3 px-5 text-black cursor-pointer border-none"}
-          />
-          
-          <CustomLink
-            href={"/blog"}
-            title={"Blog"}
-            className={"py-3 px-5 text-black cursor-pointer border-none"}
-          />
+          {navigationLinks && navigationLinks.map((link) => (
+              <CustomLink 
+                key={link.href}
+                href={link.href} 
+                title={link.title} 
+                className={`py-3 px-5 cursor-pointer`} 
+              />
+            ))}
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap ">
@@ -179,36 +103,15 @@ const Header = () => {
           className="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
         >
           <nav className="flex items-center flex-col justify-center">
-            <CustomMobileLink
-              href={"/"}
-              title={"Home"}
-              className={`py-3 px-2`}
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href={"/about"}
-              title={"About"}
-              className={`py-3 px-5`}
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href={"/projects"}
-              title={"Projects"}
-              className={"py-3 px-5"}
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href={"/articles"}
-              title={"Articles"}
-              className={"py-3 px-5"}
-              toggle={handleClick}
-            />
-            <CustomMobileLink
-              href={"/study"}
-              title={"Study"}
-              className={"py-3 px-5"}
-              toggle={handleClick}
-            />
+            {navigationLinks && navigationLinks.map((link) => (
+                <CustomMobileLink 
+                  key={link.href}
+                  href={link.href} 
+                  title={link.title} 
+                  className={`py-3 px-5 cursor-pointer`} 
+                  toggle={handleClick}
+                />
+              ))}
           </nav>
 
           <nav className="flex items-center justify-center flex-wrap ">

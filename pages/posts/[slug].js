@@ -1,5 +1,7 @@
 import { getAllPublishedExcludeYouTube, getSingleBlogPostBySlug } from "../../lib/notion"
-import PostDetail from "../../components/postDetail";
+
+// import PostDetail from "../../components/postDetail";
+import PostDetail from '../../components/post/postDetail.tsx';
 
 const Post = ({ post }) => {
   return (

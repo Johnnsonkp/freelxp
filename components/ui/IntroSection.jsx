@@ -8,6 +8,7 @@ export const IntroSection = () => {
   const IntroSectionData = siteConfig.introSectionData || null
   const greetingMsg = siteConfig.profileDescriptionTitle || null
 
+  if (!description || !IntroSectionData) return null;
   return (
     <section className="py-0 mt-[-29px] mb-0">
       <div className="container mx-auto px-6 max-w-7xl">

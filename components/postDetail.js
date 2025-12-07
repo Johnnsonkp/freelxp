@@ -149,7 +149,7 @@ export default function PostDetail({ post }) {
               <div className="flex justify-between items-center text-white/75 text-base py-2">
 
                 <div className="flex align-middle justify-center">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background shadow-2xl">
+                  <div className="w-13 h-13 rounded-full overflow-hidden border-2 border-background shadow-2xl">
                     {imgSrc && 
                       <SmoothImgLoad 
                         src={imgSrc}
@@ -161,7 +161,6 @@ export default function PostDetail({ post }) {
                         quality={100}
                       />}
                   </div>
-                  {/* <p className="font-medium inline-block p-2">by <span id="author" className="font-medium inline-block">John Nkpolukwu</span></p> */}
                   <p className="font-medium inline-block p-2 py-4">John Nkpolukwu</p>
                 </div>
 

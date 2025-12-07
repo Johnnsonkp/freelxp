@@ -6,7 +6,6 @@ export const ProfileSection = () => {
   const imgSrc = "/headshot-bw.jpeg";
 
   return (
-    // <ProfileSectionAlt />
     <section className="relative -mt-28 mb-0 ">
       <div className="container mx-auto px-6 flex flex-col items-center">
         <div className="relative">
@@ -26,7 +25,7 @@ export const ProfileSection = () => {
         <h2 className="mt-2 text-3xl md:text-3xl font-semibold text-foreground">
           John Nkpolukwu
         </h2>
-        <h3 className="mt-1 text-3xl md:text-2xl font-thin text-foreground">
+        <h3 className="mt-0 text-3xl md:text-2xl font-thin text-foreground">
           Software Engineer | UX/UI Specialist
         </h3>
         <SocialIconNav />

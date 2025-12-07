@@ -14,7 +14,6 @@ export const HeroSectionAlt = () => {
         width={1200}
         height={220}
       />
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-white/100 via-white/5 dark:from-[#121212] dark:via-black/5 to-background" /> */}
       <div className="relative h-full flex flex-col items-end justify-center container mx-auto px-6" />
     </section>
   );

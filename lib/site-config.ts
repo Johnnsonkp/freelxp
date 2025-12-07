@@ -16,6 +16,19 @@ export interface SiteConfig {
   description?: string
   profileDescriptionTitle?: string
   profileDescription?: string
+
+  introSectionData?: Array<{
+    icon: string
+    text: string
+    linkObj: {
+      href: string
+      text: string
+      src: string
+      alt: string
+      externalLink: boolean
+    }
+  }>
+  
   language?: string
 
   twitter?: string

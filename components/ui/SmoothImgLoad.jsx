@@ -18,7 +18,7 @@ import { useState } from 'react';
 /**
  * @param {SmoothImgLoadProps} props
  */
-const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height, priority, quality }) => {
+const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height, priority, quality, onMouseEnter, onMouseLeave }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (

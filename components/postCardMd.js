@@ -11,33 +11,6 @@ export default function PostCardSm({ post, index }) {
 
   const [selectedPost, setSelectedPost] = useState(post);
 
-  // const getPosts = async () => {
-  //   const data = await getAllPublishedExcludeYouTube();
-  //   return data;
-  // }
-
-  // useEffect( => {
-  //   if (!post.cover) {
-  //     const data = getPosts();
-
-  //     const matchedPost = data.find(p => p.slug === post.slug);
-  //     if (matchedPost) {
-  //       setSelectedPost(matchedPost);
-  //     }      
-  //   }
-  // }, [post])
-
-  // useEffect(() => {
-  //   if (!post.cover) {
-  //     const data = getPosts();
-
-  //     const matchedPost = data.find(p => p.slug === post.slug);
-  //     if (matchedPost) {
-  //       setSelectedPost(matchedPost);
-  //     }      
-  //   }
-  // }, [post])
-
   if (!selectedPost) return null;
 
   return (
@@ -61,26 +34,12 @@ export default function PostCardSm({ post, index }) {
           </p>
         </div>
         <div className="relative overflow-hidden aspect-video rounded-lg">
-          {/* <Image
-            fill
-            className={`object-cover ${post.cover? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
-            src={post.cover}
-            alt={post.title}
-          /> */}
-          {/* {post.cover? 
-            <Image
-              fill
-              className={`object-cover ${post.cover? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
-              src={post.cover}
-              alt={post.title}
-            /> : <ShimmerPlaceholder colorIndex={index % 2 === 0} />} */}
-
-            <SmoothImgLoad 
-              src={selectedPost.cover} 
-              alt={selectedPost.title} 
-              className={`object-cover `}
-              fill={true} 
-            />
+          <SmoothImgLoad 
+            src={selectedPost.cover} 
+            alt={selectedPost.title} 
+            className="object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+            fill={true} 
+          />
         </div>
       </Link>
       <div className="px-4 py-1 flex justify-between items-center">

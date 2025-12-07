@@ -16,8 +16,55 @@ export default siteConfig({
   
   // open graph metadata (optional)
   profileDescriptionTitle: "💡 Hello World! 👋",
-  profileDescription: "Hi, I'm Chinonso John Nkpolukwu—you can call me John! I'm a passionate software developer and vacation rental host with a deep love for all things tech.",
+  profileDescription: "Hi, I'm Chinonso John Nkpolukwu, you can call me John! I'm a passionate software developer and vacation rental host with a deep love for all things tech.",
   description: 'Software Engineer & Python Developer sharing insights on full-stack development, machine learning, and automation. Follow my programming journey, one blog post at a time.',
+
+  introSectionData: [
+    {
+      icon: "https://img.icons8.com/?size=100&id=4zYjb7lh1HOO&format=png&color=000000",
+      text: "For more info check out my",
+      linkObj: {
+        href: "/about",
+        text: "bio",
+        src: "/icons/user-icon.svg",
+        alt: "User Icon",
+        externalLink: false
+      }
+    },
+    {
+      icon: "https://img.icons8.com/?size=100&id=ZDYUQgA0xkCJ&format=png&color=000000",
+      text: "You can find my latest projects",
+      linkObj: {
+        href: "/projects",
+        text: "here",
+        src: "/icons/project-icon.svg",
+        alt: "Project Icon",
+        externalLink: false
+      }
+    },
+    {
+      icon: "https://www.vectorlogo.zone/logos/airbnb/airbnb-icon.svg",
+      text: "My Airbnb profile",
+      linkObj: {
+        href: "https://www.airbnb.com.au/users/show/447493012",
+        text: "here",
+        src: "https://www.vectorlogo.zone/logos/airbnb/airbnb-icon.svg",
+        alt: "Airbnb Logo",
+        externalLink: true
+      }
+    },
+    {
+      icon: "https://citystaysmelbourne.com/wp-content/uploads/2023/07/Transparent-Logo-1536x1090.png",
+      text: "My Direct booking website",
+      linkObj: {
+        href: "https://www.airbnb.com.au/users/show/447493012",
+        text: "here",
+        src: "https://citystaysmelbourne.com/wp-content/uploads/2023/07/Transparent-Logo-1536x1090.png",
+        alt: "City Stays Melbourne Logo",
+        externalLink: true
+      }
+    }
+  ],
 
   // social usernames (optional)
   github: 'Johnnsonkp',

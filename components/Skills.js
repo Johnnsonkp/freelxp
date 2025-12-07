@@ -19,10 +19,10 @@ const Skill = ({ name, x, y }) => {
 };
 
 export function Skills() {
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(null);
 
   useEffect(() => {
-    if (window && window.innerWidth < 700) {
+    if (window.innerWidth < 700) {
       setWidth(window.innerWidth);
     }
   }, []);

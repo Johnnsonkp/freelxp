@@ -4,6 +4,7 @@ import {CustomLink, CustomMobileLink} from '../buttons/CustomLink';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import SiteLogo from '../icons/SiteLogo';
 import SocialIconNav from './SocialIconNav';
 import SwitchButton from '../buttons/SwitchButton';
 import logo from "/public/transparent-logo.png";
@@ -45,10 +46,7 @@ const Header = () => {
           &nbsp;
         </span>
 
-        <Link href="/" className="flex align-middle justify-center items-center">
-          <h1 className="font-bold mt-1 text-lg">{siteLogoTitle}</h1>
-          <Image src={siteLogo} className={"mr-4 py-0 px-0 w-9 bg-[#F5F5F5] rounded-[10rem]"} alt="logo"/>
-        </Link>
+        <SiteLogo hideTitle={false} />
         <button
           className="flex-col justify-center items-center md:hidden"
           onClick={handleClick}

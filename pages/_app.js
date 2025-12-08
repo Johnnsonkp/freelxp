@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import Footer from '../components/footer';
 import Head from 'next/head';
 import Header from '../components/ui/header/Header.jsx';
+import SideNav from '@/components/ui/nav/SideNav';
 import TopNavInfiniteScroll from '../components/ui/topNavScroll/TopNavScroll';
 
 export default function App({ Component, pageProps }) {
@@ -21,7 +22,10 @@ export default function App({ Component, pageProps }) {
         <div className="mt-8">
           <Header />
         </div>
-        <Component {...pageProps} />
+        {/* <div className='flex gap-11'> */}
+          {/* <SideNav /> */}
+          <Component {...pageProps} />
+        {/* </div> */}
         <Footer />
       </main>
     </>

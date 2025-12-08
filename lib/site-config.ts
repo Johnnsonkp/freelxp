@@ -4,6 +4,21 @@ export interface NavigationLink {
   pageId?: string
 }
 
+export interface IntroSectionDataItem {
+  introSectionData?: Array<{
+    icon: string
+    iconPadding: boolean
+    text: string
+    linkObj: {
+      href: string
+      text: string
+      src: string
+      alt: string
+      externalLink: boolean
+    }
+  }>
+}
+
 export interface SiteConfig {
   rootNotionPageId?: string
   rootNotionSpaceId?: string
@@ -17,17 +32,7 @@ export interface SiteConfig {
   profileDescriptionTitle?: string
   profileDescription?: string
 
-  introSectionData?: Array<{
-    icon: string
-    text: string
-    linkObj: {
-      href: string
-      text: string
-      src: string
-      alt: string
-      externalLink: boolean
-    }
-  }>
+  introSectionData?: IntroSectionDataItem['introSectionData']
   
   language?: string
 

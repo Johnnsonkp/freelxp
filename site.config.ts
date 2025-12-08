@@ -21,7 +21,9 @@ export default siteConfig({
 
   introSectionData: [
     {
-      icon: "https://img.icons8.com/?size=100&id=4zYjb7lh1HOO&format=png&color=000000",
+      // icon: "https://img.icons8.com/?size=100&id=4zYjb7lh1HOO&format=png&color=000000",
+      icon: "https://img.icons8.com/?size=100&id=qQEmBWcJr3TX&format=png&color=000000",
+      iconPadding: true,
       text: "For more info check out my",
       linkObj: {
         href: "/about",
@@ -32,7 +34,9 @@ export default siteConfig({
       }
     },
     {
-      icon: "https://img.icons8.com/?size=100&id=ZDYUQgA0xkCJ&format=png&color=000000",
+      // icon: "https://img.icons8.com/?size=100&id=ZDYUQgA0xkCJ&format=png&color=000000",
+      icon: "https://img.icons8.com/?size=100&id=NK7WZ47r1Kwf&format=png&color=000000",
+      iconPadding: true,
       text: "You can find my latest projects",
       linkObj: {
         href: "/projects",
@@ -44,6 +48,7 @@ export default siteConfig({
     },
     {
       icon: "https://www.vectorlogo.zone/logos/airbnb/airbnb-icon.svg",
+      iconPadding: true,
       text: "My Airbnb profile",
       linkObj: {
         href: "https://www.airbnb.com.au/users/show/447493012",
@@ -55,6 +60,7 @@ export default siteConfig({
     },
     {
       icon: "https://citystaysmelbourne.com/wp-content/uploads/2023/07/Transparent-Logo-1536x1090.png",
+      iconPadding: false,
       text: "My Direct booking website",
       linkObj: {
         href: "https://www.airbnb.com.au/users/show/447493012",

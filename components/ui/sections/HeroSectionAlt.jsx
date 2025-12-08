@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const HeroSectionAlt = () => {
   return (
-    <section className="cover-banner relative w-full max-w-[1250px] mx-auto h-[230px] overflow-hidden mt-0 cover-banner border-2 dark:border-darkBorder rounded-xl">
+    <section className="cover-banner relative w-full max-w-[1250px] mx-auto h-[215px] overflow-hidden mt-0 cover-banner border-2 dark:border-darkBorder rounded-xl shadow-md">
       <Image
         src="/bannerImg2.png"
         alt="banner image"

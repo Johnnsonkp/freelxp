@@ -17,36 +17,16 @@ export default function TopNavInfiniteScroll() {
     <div
       id="carousel-container"
       data-animated
-      // className={`dark:bg-light dark:color-dark ${styles.carouselContainer}`}
       className={`!dark:bg-light dark:color-dark ${styles.carouselContainer}`}
     >
       <ul id="list" className={` ${styles.list}`}>
         <li>
-          <i className={`fa-solid fa-bullhorn`}></i> AVAILABLE FOR HIRE!{" "}
+          <img src="https://img.icons8.com/?size=100&id=441&format=png&color=f5f5f5" alt="megaphone icon" className="inline-block w-4 h-4 ml-1 mr-2"/>
+          AVAILABLE FOR HIRE!{" "}
         </li>
         <li>
-          <i className="fa-solid fa-bullhorn"></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn"></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn"></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn "></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn"></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn "></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn "></i> AVAILABLE FOR HIRE!{" "}
-        </li>
-        <li>
-          <i className="fa-solid fa-bullhorn "></i> AVAILABLE FOR HIRE!{" "}
+          <img src="https://img.icons8.com/?size=100&id=441&format=png&color=f5f5f5" alt="megaphone icon" className="inline-block w-4 h-4 ml-1 mr-2"/>
+          AVAILABLE FOR HIRE!{" "}
         </li>
       </ul>
     </div>

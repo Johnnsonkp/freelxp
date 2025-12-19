@@ -13,7 +13,7 @@ function LinksCardMd({data}: LinksCardMdProps) {
       {data && data.map((item, index) => (
         <div className="space-y-2" key={index}>
           <p className="text-foreground flex items-center gap-1 ">
-            <div className={`w-7 h-6 border border-white rounded-full flex items-center justify-center ${item?.iconPadding ? 'px-1' : ''}`}>
+            <div className={`w-7 h-6 border border-accent dark:border-darkBorder rounded-full flex items-center justify-center ${item?.iconPadding ? 'px-1' : ''}`}>
               {item.icon && <img src={item.icon} alt={item.linkObj.alt || ''} className="m-auto"/>}
             </div>
             <span className='text-sm'>
@@ -27,7 +27,7 @@ function LinksCardMd({data}: LinksCardMdProps) {
               </Link>.
             </span>
           </p>
-          <hr className='border-gray-100 my-0 py-0'></hr>
+          <hr className='border-accent dark:border-darkBorder my-0 py-0'></hr>
         </div>
       ))}
     </Card>

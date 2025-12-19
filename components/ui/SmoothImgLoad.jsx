@@ -20,6 +20,16 @@ import { useState } from 'react';
  */
 const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height, priority, quality, onMouseEnter, onMouseLeave }) => {
   const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
+
+  // Fallback image for errors
+  const fallbackSrc = '/images/green-dots.jpeg';
+
+  const handleError = () => {
+    console.error('Image failed to load:', src);
+    setError(true);
+    setLoaded(true); // Stop showing shimmer
+  };
 
   return (
     <>
@@ -27,9 +37,10 @@ const SmoothImgLoad = ({ src, alt, className, sizes, fill, width, height, priori
 
       <Image
         fill={fill || false}
-        src={src}
+        src={error ? fallbackSrc : src}
         alt={alt}
         onLoadingComplete={() => setLoaded(true)}
+        onError={handleError}
         className={`${className} ${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500 ease-in-out`}
         sizes={sizes || undefined}
         width={width || undefined}

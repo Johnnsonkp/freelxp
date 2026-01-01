@@ -63,7 +63,7 @@ export default siteConfig({
       iconPadding: false,
       text: "My Direct booking website",
       linkObj: {
-        href: "https://www.airbnb.com.au/users/show/447493012",
+        href: "https://citystaysmelbourne.com",
         text: "here",
         src: "https://citystaysmelbourne.com/wp-content/uploads/2023/07/Transparent-Logo-1536x1090.png",
         alt: "City Stays Melbourne Logo",
@@ -114,5 +114,7 @@ export default siteConfig({
       title: 'Blog',
       href: '/blog'
     }
-  ]
+  ],
+
+  jobTrackerPin: '0962'
 })

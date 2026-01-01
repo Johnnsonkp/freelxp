@@ -59,6 +59,8 @@ export interface SiteConfig {
 
   navigationStyle?: string
   navigationLinks?: Array<NavigationLink>
+
+  jobTrackerPin?: string
 }
 
 

@@ -1,24 +1,24 @@
 # TODO List
 
 ## 🚀 High Priority
-- [ ] Fix stale image fetch / load of notion blog / image url
+- [x] Fix stale image fetch / load of notion blog / image url
 - [ ] Add state manager
+- [x] Setup PG database for job tracker
 
 ## 📋 Medium Priority
 - [ ] Complete typescript refactor
 - [ ] Story upload feature 
-- [ ] 
+- [ ] Job application tracking feature
+- [ ] Add testing for job tracker feature
 
-## 💡 Low Priority / Nice to Have
-
-
-## ✅ Completed
+## 💡 Low Priority
+- [ ] Fix responsive across devices
 - [x] Add Social Icons
+
 
 ---
 
 ## 📝 Notes
-Add any additional notes or context here.
 
 ---
 

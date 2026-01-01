@@ -1,9 +1,10 @@
 import '../styles/globals.css'
 
+import Divider from '@/components/ui/Divider.jsx';
 import Footer from '../components/footer';
 import Head from 'next/head';
 import Header from '../components/ui/header/Header.jsx';
-import SideNav from '@/components/ui/nav/SideNav';
+import SideNav from '../components/ui/nav/SideNav';
 import TopNavInfiniteScroll from '../components/ui/topNavScroll/TopNavScroll';
 
 export default function App({ Component, pageProps }) {
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
           </div>
         </div>
+        <Divider />
         <Footer />
       </main>
     </>

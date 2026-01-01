@@ -21,11 +21,18 @@ async function runMigrations() {
     await client.connect();
     console.log('Connected to database successfully');
 
-    // Read schema file
-    const schemaPath = path.join(__dirname, '../lib/db/schema.sql');
+    // Read schema file - check multiple possible locations
+    let schemaPath = path.join(__dirname, '../lib/db/schema.sql');
+    
+    // Fallback for Railway deployment
+    if (!fs.existsSync(schemaPath)) {
+      schemaPath = path.join(process.cwd(), 'lib/db/schema.sql');
+    }
     
     if (!fs.existsSync(schemaPath)) {
       console.error('ERROR: Schema file not found at:', schemaPath);
+      console.error('Current working directory:', process.cwd());
+      console.error('Directory contents:', fs.readdirSync(process.cwd()));
       process.exit(1);
     }
 

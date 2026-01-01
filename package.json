@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:setup": "node scripts/run-migrations.js",
+    "db:local": "bash scripts/setup-database.sh"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",

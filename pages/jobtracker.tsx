@@ -12,15 +12,6 @@ import siteConfig from '../site.config';
 import { useJobApplications } from '../lib/hooks/useJobApplications';
 import { useRouter } from 'next/router';
 
-const statusColors: Record<StatusType, string> = {
-  applied: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-  interviewing: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-  offer: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-  rejected: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-  accepted: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200',
-  withdrawn: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
-};
-
 function JobTracker() {
   const router = useRouter();
   const { applications, loading, error, setApplications, refetch } = useJobApplications();
@@ -89,6 +80,27 @@ function JobTracker() {
     );
   };
 
+  const handleDeleteApplication = async (applicationId: string) => {
+    if (!confirm('Are you sure you want to delete this application?')) return;
+
+    try {
+      const response = await fetch(`/api/job-applications/${applicationId}`, {
+        method: 'DELETE',
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        refetch();
+      } else {
+        console.error('Failed to delete application:', result.error);
+        alert('Failed to delete application. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error deleting application:', error);
+      alert('An error occurred while deleting the application.');
+    }
+  };
+
   const handleCloseForm = () => {
     setShowForm(false);
     setUpdatedApplication(null);
@@ -123,8 +135,8 @@ function JobTracker() {
           <JobTrackerTable 
             applications={applications} 
             filter={filter} 
-            statusColors={statusColors} 
             editApplication={handleEditApplication}
+            deleteApplication={handleDeleteApplication}
           />
 
           {/* Form Modal */}

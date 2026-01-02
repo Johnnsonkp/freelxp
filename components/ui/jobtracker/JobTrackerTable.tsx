@@ -1,6 +1,7 @@
 import React from 'react'
+import type { JobApplicationStatus as StatusType } from '../../../lib/schema/job-application';
 
-function JobTrackerTable({ applications, filter, statusColors, editApplication }: { applications: any[]; filter: string; statusColors: Record<string, string>; editApplication: (app: any) => void }) {
+function JobTrackerTable({ applications, filter, editApplication, deleteApplication }: { applications: any[]; filter: string; editApplication: (app: any) => void; deleteApplication: (id: string) => void }) {
   
   const formatDate = (date: Date | string | undefined) => {
     if (!date) return '-';
@@ -11,6 +12,15 @@ function JobTrackerTable({ applications, filter, statusColors, editApplication }
   const filteredApplications = filter === 'all' 
     ? applications 
     : applications.filter(app => app.status === filter);
+
+  const statusColors: Record<StatusType, string> = {
+    applied: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+    interviewing: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+    offer: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+    rejected: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+    accepted: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200',
+    withdrawn: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
+  };
 
   return (
      <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
@@ -112,7 +122,9 @@ function JobTrackerTable({ applications, filter, statusColors, editApplication }
                         className="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 mr-3">
                           Edit
                         </button>
-                        <button className="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300">
+                        <button 
+                        onClick={() => deleteApplication(app.id)}
+                        className="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300">
                           Delete
                         </button>
                       </td>

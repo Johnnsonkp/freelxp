@@ -3,18 +3,24 @@
 ## 🚀 High Priority
 - [x] Fix stale image fetch / load of notion blog / image url
 - [ ] Add state manager
-- [x] Setup PG database for job tracker
 
 ## 📋 Medium Priority
 - [ ] Complete typescript refactor
 - [ ] Story upload feature 
-- [ ] Job application tracking feature
-- [ ] Add testing for job tracker feature
+- [x] Job application tracking feature
+- [x] Setup PG database for job tracker
+- [ ] Content creation calendar feature
+- [ ] Add links on side panel
 
 ## 💡 Low Priority
 - [ ] Fix responsive across devices
+- [ ] Get futurastic icons for links
+- [ ] Rewrite profile bio (include masters)
 - [x] Add Social Icons
 
+
+## 💡 Testing
+- [ ] Add testing for job application tracker
 
 ---
 
@@ -22,4 +28,4 @@
 
 ---
 
-**Last Updated:** November 26, 2025
+**Last Updated:** Jan 2, 2026, 8:26 pm

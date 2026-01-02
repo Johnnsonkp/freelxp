@@ -22,11 +22,11 @@ async function runMigrations() {
     console.log('Connected to database successfully');
 
     // Read schema file - check multiple possible locations
-    let schemaPath = path.join(__dirname, '../lib/db/schema.sql');
+    let schemaPath = path.join(__dirname, '../lib/db/schema.pgsql');
     
     // Fallback for Railway deployment
     if (!fs.existsSync(schemaPath)) {
-      schemaPath = path.join(process.cwd(), 'lib/db/schema.sql');
+      schemaPath = path.join(process.cwd(), 'lib/db/schema.pgsql');
     }
     
     if (!fs.existsSync(schemaPath)) {

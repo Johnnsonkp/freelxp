@@ -46,11 +46,13 @@ async function runMigrations() {
       
       console.log(`Replacing role references with: ${dbUser}`);
       
-      // Replace all variations of user role references
-      schema = schema.replace(/CREATE ROLE user/gi, `CREATE ROLE ${dbUser}`);
-      schema = schema.replace(/OWNER TO user/gi, `OWNER TO ${dbUser}`);
-      schema = schema.replace(/GRANT ([^\s]+) ON ([^\s]+) TO user/gi, `GRANT $1 ON $2 TO ${dbUser}`);
-      schema = schema.replace(/ALTER DEFAULT PRIVILEGES.*TO user/gi, match => match.replace(/user/gi, dbUser));
+      // Replace all variations of user role references (including quoted "user")
+      schema = schema.replace(/CREATE ROLE (")?user\1/gi, `CREATE ROLE ${dbUser}`);
+      schema = schema.replace(/OWNER TO (")?user\1/gi, `OWNER TO ${dbUser}`);
+      schema = schema.replace(/GRANT ([^\s]+) ON ([^\s]+) TO (")?user\3/gi, `GRANT $1 ON $2 TO ${dbUser}`);
+      schema = schema.replace(/GRANT USAGE ON TYPE ([^\s]+) TO (")?user\2/gi, `GRANT USAGE ON TYPE $1 TO ${dbUser}`);
+      schema = schema.replace(/GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA ([^\s]+) TO (")?user\2/gi, `GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA $1 TO ${dbUser}`);
+      schema = schema.replace(/ALTER DEFAULT PRIVILEGES.*TO (")?user\1/gi, match => match.replace(/"?user"?/gi, dbUser));
       
       // Remove CREATE ROLE statements entirely since Railway manages roles
       schema = schema.replace(/CREATE ROLE [^;]+;/gi, '');

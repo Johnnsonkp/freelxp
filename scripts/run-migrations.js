@@ -45,8 +45,15 @@ async function runMigrations() {
       const dbUser = match ? match[1] : 'postgres';
       
       console.log(`Replacing role references with: ${dbUser}`);
-      schema = schema.replace(/OWNER TO user;/g, `OWNER TO ${dbUser};`);
-      schema = schema.replace(/GRANT .* TO user;/g, match => match.replace('user', dbUser));
+      
+      // Replace all variations of user role references
+      schema = schema.replace(/CREATE ROLE user/gi, `CREATE ROLE ${dbUser}`);
+      schema = schema.replace(/OWNER TO user/gi, `OWNER TO ${dbUser}`);
+      schema = schema.replace(/GRANT ([^\s]+) ON ([^\s]+) TO user/gi, `GRANT $1 ON $2 TO ${dbUser}`);
+      schema = schema.replace(/ALTER DEFAULT PRIVILEGES.*TO user/gi, match => match.replace(/user/gi, dbUser));
+      
+      // Remove CREATE ROLE statements entirely since Railway manages roles
+      schema = schema.replace(/CREATE ROLE [^;]+;/gi, '');
     }
     
     console.log('Running migrations...');

@@ -36,7 +36,19 @@ async function runMigrations() {
       process.exit(1);
     }
 
-    const schema = fs.readFileSync(schemaPath, 'utf8');
+    let schema = fs.readFileSync(schemaPath, 'utf8');
+    
+    // In production (Railway), replace 'user' role with actual database user
+    if (process.env.NODE_ENV === 'production') {
+      // Extract username from DATABASE_URL
+      const match = databaseUrl.match(/postgresql:\/\/([^:]+):/);
+      const dbUser = match ? match[1] : 'postgres';
+      
+      console.log(`Replacing role references with: ${dbUser}`);
+      schema = schema.replace(/OWNER TO user;/g, `OWNER TO ${dbUser};`);
+      schema = schema.replace(/GRANT .* TO user;/g, match => match.replace('user', dbUser));
+    }
+    
     console.log('Running migrations...');
 
     await client.query(schema);

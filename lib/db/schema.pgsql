@@ -119,6 +119,6 @@ INSERT INTO job_applications (
 
 -- Grant permissions to the application user
 -- Replace 'user' with your actual database user if different
-GRANT ALL PRIVILEGES ON TABLE job_applications TO "user";
-GRANT USAGE ON TYPE job_status TO "user";
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO "user";
+GRANT ALL PRIVILEGES ON TABLE job_applications TO "postgres";
+GRANT USAGE ON TYPE job_status TO "postgres";
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO "postgres";

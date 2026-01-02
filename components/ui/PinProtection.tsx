@@ -3,9 +3,10 @@ import React, { useEffect, useRef, useState } from 'react';
 interface PinProtectionProps {
   correctPin: string;
   onSuccess: () => void;
+  onCancel?: () => void;
 }
 
-export default function PinProtection({ correctPin, onSuccess }: PinProtectionProps) {
+export default function PinProtection({ correctPin, onSuccess, onCancel }: PinProtectionProps) {
   const [pin, setPin] = useState(['', '', '', '']);
   const [error, setError] = useState(false);
   const [shake, setShake] = useState(false);
@@ -153,8 +154,23 @@ export default function PinProtection({ correctPin, onSuccess }: PinProtectionPr
           </p>
         )}
 
+        {/* Buttons */}
+        <div className="flex justify-center mt-6">
+          {onCancel && (
+            <button
+              onClick={onCancel}
+              className="px-6 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 
+                bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 
+                rounded-lg transition-colors focus:outline-none focus:ring-2 
+                focus:ring-gray-400 dark:focus:ring-gray-500"
+            >
+              Cancel
+            </button>
+          )}
+        </div>
+
         {/* Info */}
-        <p className="text-center text-xs text-gray-500 dark:text-gray-500 mt-6">
+        <p className="text-center text-xs text-gray-500 dark:text-gray-500 mt-4">
           This page is protected for privacy
         </p>
       </div>

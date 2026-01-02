@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import ReactMarkdown from "react-markdown";
-import SmoothImgLoad from "./ui/SmoothImgLoad";
+import SmoothImgLoad from "../ui/SmoothImgLoad";
 import useColorThief from "use-color-thief";
 import { useRouter } from 'next/router'
 

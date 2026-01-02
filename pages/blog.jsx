@@ -1,7 +1,8 @@
 import { getAllPublished, getAllPublishedExcludeYouTube } from '../lib/notion'
 
 import Head from 'next/head'
-import PostList from '../components/postList'
+// import PostList from '../components/postList'
+import PostList from '../components/post/postList';
 
 function Blog({ posts }) {
   return (

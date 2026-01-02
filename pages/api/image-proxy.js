@@ -2,7 +2,8 @@ export default async function handler(req, res) {
   const { url } = req.query;
 
   if (!url) {
-    return res.status(400).json({ error: "Missing url parameter" });
+    res.status(400).json({ error: "Missing url parameter" });
+    return;
   }
 
   try {
@@ -21,9 +22,10 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       console.error(`Image fetch failed: ${response.status} for ${url}`);
-      return res
+      res
         .status(response.status)
         .json({ error: "Failed to fetch image from origin", status: response.status });
+      return;
     }
 
     // Copy the content type from the original image
@@ -41,15 +43,18 @@ export default async function handler(req, res) {
 
     // Pipe the response body to the client
     const body = await response.arrayBuffer();
-    return res.status(200).send(Buffer.from(body));
+    res.status(200).send(Buffer.from(body));
+    return;
   } catch (err) {
     // Handle timeout specifically
     if (err.name === 'AbortError' || err.name === 'TimeoutError') {
       console.error("Proxy timeout:", url);
-      return res.status(504).json({ error: "Gateway timeout", message: "Image request timed out" });
+      res.status(504).json({ error: "Gateway timeout", message: "Image request timed out" });
+      return;
     }
     
     console.error("Proxy error:", err);
-    return res.status(500).json({ error: "Proxy failed", details: err.message });
+    res.status(500).json({ error: "Proxy failed", details: err.message });
+    return;
   }
 }

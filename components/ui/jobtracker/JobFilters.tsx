@@ -7,7 +7,7 @@ function JobFilters({applications, filter, setFilter}: {
   setFilter: (filter: StatusType | 'all') => void;
 }) {
   return (
-    <div className="py-4 rounded-lg shadow mb-1">
+    <div className="py-4 rounded-lg mb-1">
       <div className="flex flex-wrap gap-2">
         <button
           onClick={() => setFilter('all')}

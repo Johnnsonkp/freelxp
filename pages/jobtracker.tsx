@@ -10,6 +10,7 @@ import PinProtection from '../components/ui/PinProtection';
 import type { JobApplicationStatus as StatusType } from '../lib/schema/job-application';
 import siteConfig from '../site.config';
 import { useJobApplications } from '../lib/hooks/useJobApplications';
+import { useRouter } from 'next/router';
 
 const statusColors: Record<StatusType, string> = {
   applied: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
@@ -21,6 +22,7 @@ const statusColors: Record<StatusType, string> = {
 };
 
 function JobTracker() {
+  const router = useRouter();
   const { applications, loading, error, setApplications, refetch } = useJobApplications();
   const [filter, setFilter] = useState<StatusType | 'all'>('all');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,6 +39,11 @@ function JobTracker() {
     setIsAuthenticated(true);
     sessionStorage.setItem('jobTrackerAuth', 'true');
   };
+
+  const handlePinCancel = () => {
+    router.push('/');
+  };
+  
   const [showForm, setShowForm] = useState(false);
   const [updatedApplication, setUpdatedApplication] = useState<JobApplication | null>(null);
 
@@ -92,7 +99,8 @@ function JobTracker() {
       {!isAuthenticated && (
         <PinProtection 
           correctPin={siteConfig.jobTrackerPin} 
-          onSuccess={handlePinSuccess} 
+          onSuccess={handlePinSuccess}
+          onCancel={handlePinCancel}
         />
       )}
       <div className={`min-h-screen py-8 px-4 sm:px-6 lg:px-8 transition-all ${!isAuthenticated ? 'blur-md pointer-events-none' : ''}`}>

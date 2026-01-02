@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
-import Footer from "./footer";
+import Footer from "../sections/footer";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
-import SmoothImgLoad from "./ui/SmoothImgLoad";
+import SmoothImgLoad from "../ui/SmoothImgLoad";
 import useColorThief from "use-color-thief";
 import { useRouter } from 'next/router'
 

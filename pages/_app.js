@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 
 import Divider from '@/components/ui/Divider.jsx';
-import Footer from '../components/footer';
+import Footer from '../components/sections/footer';
 import Head from 'next/head';
 import Header from '../components/ui/header/Header.jsx';
 import SideNav from '../components/ui/nav/SideNav';

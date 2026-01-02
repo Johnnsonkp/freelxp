@@ -1,54 +1,30 @@
-import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
-// import Image from "next/image";
+import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
-// import { ShimmerPlaceholder } from "./ui/ShimmerPlaceholder";
-import SmoothImgLoad from "./ui/SmoothImgLoad";
-import {getAllPublishedExcludeYouTube} from "../lib/notion";
 
-export default function PostCardSm({ post, index }) {
-
-  const [selectedPost, setSelectedPost] = useState(post);
-
-  if (!selectedPost) return null;
-
+export default function PostCardLg({ post, index }) {
   return (
-    <div
+    <Link
+      href={`posts/${post.slug}`}
       key={index}
-      className="shadow-lg bg-white dark:bg-neutral-900 divide-neutral-200 dark:divide-neutral-800 divide-y rounded-xl flex flex-col justify-between col-span-2 md:col-span-1"
+      className="snap-start flex flex-col shadow-lg bg-neutral-200 dark:bg-neutral-900 min-w-[80%] md:min-w-[100%] rounded-xl col-span-1 overflow-hidden will-change-transform "
     >
-      <Link
-        href={`posts/${selectedPost.slug}`}
-        className="p-4 flex flex-col-reverse justify-between gap-4"
-      >
-        <div>
-          <p className="text-base capitalize font-serif italic opacity-80 mb-1">
-            {selectedPost.tags[0]}
-          </p>
-          <h2 className="flex-1 text-black dark:text-white font-bold text-lg leading-tight line-clamp-3">
-            {selectedPost.title}
-          </h2>
-          <p className="text-neutral-400 text-sm md:text-base line-clamp-2">
-            {selectedPost.description}
-          </p>
-        </div>
-        <div className="relative overflow-hidden aspect-video rounded-lg">
-          <SmoothImgLoad 
-            src={selectedPost.cover} 
-            alt={selectedPost.title} 
-            className="object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-            fill={true} 
-          />
-        </div>
-      </Link>
-      <div className="px-4 py-1 flex justify-between items-center">
-        <p className="text-xs md:text-sm font-semibold m-0 text-neutral-400">
-          {selectedPost.date}
-        </p>
-        <Menu as="div" className="relative inline-block text-left">
+      <div className="relative overflow-hidden aspect-square">
+        <Image
+          fill
+          src={post.cover}
+          alt={post.title}
+          priority={true}
+          className="z-0 object-cover object-center absolute w-full h-full hover:scale-105 transition-all duration-1000 ease-in-out"
+        />
+        <Menu as="div" className="relative flex justify-between p-4">
+          <p className="text-xs md:text-sm font-semibold m-0 text-white/80 mt-1"
+            style={{textShadow: "2px 3px 5px rgba(0,0,0,0.20)"}}
+          >{post.date}</p>
           <div>
-            <Menu.Button className="text-neutral-400 hover:text-neutral-600 transition duration-200 ease-in-out">
+            <Menu.Button className="bg-white/20 dark:bg-black/20 rounded-full text-white hover:opacity-75 transition duration-200 ease-in-out">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -75,16 +51,16 @@ export default function PostCardSm({ post, index }) {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute -right-4 z-50 mt-4 w-56 origin-top-right rounded-lg bg-white/75 backdrop-blur-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  dark:bg-neutral-800/75">
+            <Menu.Items className="absolute -right-4 z-50 mt-4 w-56 origin-top-right rounded-lg bg-white/75 backdrop-blur-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-neutral-800/75">
               <div className="py-1 divide-y divide-neutral-200 dark:divide-neutral-700">
                 <Menu.Item>
                   <a
                     className="text-black dark:text-white/90 px-4 py-2 text-base w-full flex justify-between hover:bg-neutral-100 dark:hover:bg-neutral-800 transition duration-100 ease-in-out"
                     onClick={() => {
                       navigator.share({
-                        title: selectedPost.title,
-                        url: `/posts/${selectedPost.slug}`,
-                        text: "Check out John's post!",
+                        title: post.title,
+                        url: post.slug,
+                        text: "Check out Brian's post!",
                       });
                     }}
                   >
@@ -108,9 +84,9 @@ export default function PostCardSm({ post, index }) {
                 </Menu.Item>
                 <Menu.Item>
                   <a
-                    className="text-black dark:text-white/90 px-4 py-2 text-base w-full flex justify-between hover:bg-neutral-100 dark:hover:bg-neutral-800 transition duration-100 ease-in-out"
+                    className="text-black dark:text-white/90 px-4 py-2 text-base w-full flex justify-between hover:bg-neutral-100 dark:hover:bg-neutral-800 transition duration-100 ease-in-out "
                     onClick={() => {
-                      navigator.clipboard.writeText(selectedPost.slug);
+                      navigator.clipboard.writeText(post.slug);
                     }}
                   >
                     Copy Link
@@ -135,6 +111,10 @@ export default function PostCardSm({ post, index }) {
           </Transition>
         </Menu>
       </div>
-    </div>
+      <div className="flex flex-col gap-1 justify-center min-h-16 flex-1 bg-white dark:bg-neutral-900 p-4 text-center">
+        <h2 className="text-lg md:text-xl leading-tight font-bold text-black dark:text-white line-clamp-2">{post.title}</h2>
+        <p className="text-neutral-400 text-sm line-clamp-2 pb-1">{post.description}</p>
+      </div>
+    </Link>
   );
 }

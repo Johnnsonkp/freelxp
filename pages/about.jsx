@@ -4,12 +4,12 @@ import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import AnimatedText from "../components/ui/AnimatedText";
 import Divider from "../components/ui/Divider";
 import Education from "../components/ui/sections/Education";
-import Experience from "../components/Experience";
+import Experience from "../components/sections/Experience";
 import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/ui/Layout";
 import Link from "next/link";
-import { Skills } from "../components/Skills";
+import { Skills } from "../components/sections/Skills";
 import SmoothImgLoad from "../components/ui/SmoothImgLoad";
 import profilePic2 from "/public/dev-headshot.jpeg";
 

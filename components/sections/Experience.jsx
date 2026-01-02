@@ -1,6 +1,6 @@
 import { motion, useScroll } from "framer-motion";
 
-import Lilcon from './ui/Lilcon';
+import Lilcon from '../ui/Lilcon';
 import Link from "next/link";
 import React from "react";
 import { useRef } from "react";

@@ -1,7 +1,8 @@
 import Divider from "../components/ui/Divider";
 import Head from "next/head";
-import LandingPage from "../components/heroSection";
-import PostList from "../components/postList";
+import LandingPage from "../components/sections/heroSection";
+// import PostList from "../components/postList";
+import PostList from "../components/post/postList";
 import { getAllPublished } from "../lib/notion";
 
 export default function Home({ posts }) {

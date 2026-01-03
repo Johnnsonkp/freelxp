@@ -116,7 +116,7 @@ function JobTracker() {
         />
       )}
       <div className={`min-h-screen py-8 px-4 sm:px-6 lg:px-8 transition-all ${!isAuthenticated ? 'blur-md pointer-events-none' : ''}`}>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">

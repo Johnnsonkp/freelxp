@@ -10,7 +10,7 @@ export default function Home({ posts }) {
   return (
     <>
       <Head>
-        <title>Chinonso.io | Portfolio</title>
+        <title>Chinonso.io | Home</title>
         <meta name="description" content="Chinonso.io" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

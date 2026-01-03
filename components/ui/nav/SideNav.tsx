@@ -32,13 +32,19 @@ function SideNav() {
       <div className={`h-[100vh] w-14 mt-10 shadow-md`}>
         <SideNavButton 
           href="/jobtracker"
-          iconSrc="https://img.icons8.com/?size=100&id=UuZbMO5c0AHj&format=png&color=000000"
+          // className="bg-[#373636] w-[90%] h-9 rounded-md"
+          className="bg-transparent w-[100%] p-2 rounded-md"
+          // iconSrc="https://img.icons8.com/?size=100&id=UuZbMO5c0AHj&format=png&color=000000"
+          iconSrc="/menu.png"
+          // iconSrc="/job-applications.png"
           tooltipText="Applications tracker"
         />
         <SideNavButton 
           href="https://cloud.umami.is/analytics/us/share/cJ92KB8ngLjScK6S"
-          className="bg-[#373636] w-[90%] h-9 rounded-md"
-          iconSrc="/insights.png"
+          // className="bg-[#373636] w-[90%] h-9 rounded-md"
+          className="bg-transparent w-[100%] p-2 rounded-md"
+          // iconSrc="/insights.png"
+          iconSrc="/analytics.png"
           tooltipText="Umami Analytics"
           target="_blank"
         />

@@ -16,7 +16,8 @@ export default siteConfig({
   
   // open graph metadata (optional)
   profileDescriptionTitle: "💡 Hello World! 👋",
-  profileDescription: "Hi, I'm Chinonso John Nkpolukwu, you can call me John! I'm a passionate software developer and vacation rental host with a deep love for all things tech.",
+  // profileDescription: "Hi, I'm Chinonso John Nkpolukwu, you can call me John! I'm a passionate software developer and vacation rental host with a deep love for all things tech.",
+  profileDescription: "Hi, I'm John, a Software Engineer with 3 years, a Master of Computer Science student and a Vacation Rental Host at @citystaysmelbourne. I specialise in building scalable applications. Follow me as I document my journey in the tech industry, my studies and my various other passions.",
   description: 'Software Engineer & Python Developer sharing insights on full-stack development, machine learning, and automation. Follow my programming journey, one blog post at a time.',
 
   introSectionData: [

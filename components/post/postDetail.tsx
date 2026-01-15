@@ -105,15 +105,17 @@ export default function PostDetail({ post }: { post: Post }) {
               <div className="flex justify-between items-center text-white/75 text-base py-2">
 
                 <div className="flex align-middle justify-center">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background shadow-2xl">
+                  {/* <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background shadow-2xl"> */}
+                  <div className="h-[3rem] w-[3rem] rounded-full overflow-hidden border-2 border-background shadow-2xl">
                     {imgSrc && 
                       <SmoothImgLoad 
                         src={imgSrc}
                         alt="Chinonso John Nkpolukwu"
-                        className="w-full h-full object-cover"
+                        className=" h-[3rem] w-[3rem] object-cover"
+                        // className="w-[100%] h-full object-cover"
                         fill={false}
-                        width={200}
-                        height={200}
+                        width={120}
+                        height={120}
                         quality={100}
                       />}
                   </div>

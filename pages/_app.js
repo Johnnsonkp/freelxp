@@ -23,12 +23,13 @@ export default function App({ Component, pageProps }) {
         <div className="mt-8">
           <Header />
         </div>
-        <div className='flex gap-11'>
+        <div className='flex gap-11 desk-sm:justify-between'>
           <SideNav />
 
-          <div className=' ml-auto mr-auto min-h-screen max-w-8xl desk-sm:pt-0 desk-sm:ml-14 desk-sm:mr-14 '>
+          <div className='ml-auto mr-auto min-h-screen max-w-8xl desk-sm:pt-0 desk-sm:ml-14 desk-md:ml-14 desk-lg:ml-14'>
             <Component {...pageProps} />
           </div>
+
         </div>
         <Divider />
         <Footer />

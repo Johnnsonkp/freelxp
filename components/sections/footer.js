@@ -3,29 +3,29 @@ import Link from "next/link";
 export default function Footer() {
   
   return (
-    <div className="container max-w-6xl mx-auto px-4 pb-8 mt-8">
-      <footer className="p-4 bg-white shadow-lg rounded-xl md:px-6 md:py-8 dark:bg-gray-900">
-        <div className="sm:flex sm:items-center sm:justify-between">
+    <div className="container max-w-6xl mx-auto px-4 desk-md:px-3 desk-sm:px-2 pb-8 desk-sm:pb-6 mt-8 desk-sm:mt-6">
+      <footer className="p-4 desk-md:p-6 desk-md:py-8 desk-sm:p-3 desk-sm:py-4 bg-white shadow-lg rounded-xl dark:bg-gray-900">
+        <div className="flex items-center justify-between desk-sm:flex-col desk-sm:items-start">
           <Link
             href="/"
-            className="flex items-center mb-4 sm:mb-0"
+            className="flex items-center mb-4 desk-sm:mb-4 desk-md:mb-0"
           >
             <img src="/transparent-logo.png" alt="BR logo" className="w-8 h-8 mr-3 bg-white rounded-full" />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-xl desk-sm:text-lg font-semibold whitespace-nowrap dark:text-white">
               Chinonso.io
             </span>
           </Link>
-          <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-            <li><Link href="/about" className="mr-4 hover:underline md:mr-6 ">About</Link></li>
+          <ul className="flex flex-wrap items-center mb-6 desk-sm:mb-4 text-sm text-gray-500 dark:text-gray-400">
+            <li><Link href="/about" className="mr-4 desk-md:mr-6 hover:underline">About</Link></li>
             <li><Link href="#" className="hover:underline">Contact</Link></li>
           </ul>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <hr className="my-6 desk-lg:my-8 desk-sm:my-4 border-gray-200 mx-auto dark:border-gray-700" />
+        <div className="flex items-center justify-between desk-sm:flex-col desk-sm:items-start">
+          <span className="text-sm desk-sm:text-xs text-gray-500 text-center dark:text-gray-400">
             © 2025. All Rights Reserved.
           </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+          <div className="flex mt-4 desk-sm:mt-3 space-x-6 justify-center desk-sm:justify-start">
             <a
               href="#"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"

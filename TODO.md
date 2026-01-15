@@ -21,7 +21,8 @@
 ## 💡 Low Priority
 - [ ] Fix responsive across devices
 - [ ] Get futurastic icons for links
-- [ ] Rewrite profile bio (include masters)
+- [x] Fix blog UI laytout 
+- [x] Rewrite profile bio (include masters)
 - [x] Add Social Icons
 
 

@@ -3,7 +3,7 @@ import React from 'react'
 
 function JobStats({ applications }: { applications: JobApplication[] }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-3">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3">
       
       <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow flex align-middle items-center">
         <div className="text-3xl font-bold text-gray-900 dark:text-white mr-2">

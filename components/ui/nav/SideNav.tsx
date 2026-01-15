@@ -25,8 +25,8 @@ function SideNav() {
 
   return (
     <div className={`h-[100vh] ${topMargin} w-14 shadow-md
-    border-l border-r border-border dark:border-l dark:border-r dark:border-darkBorder flex-[6] dark:bg-dark2
-    fixed z-50`}>
+    border-l border-r border-border dark:border-l dark:border-r dark:border-darkBorder flex-[6] bg-light dark:bg-dark2
+    fixed z-50 `}>
       <SiteLogo hideTitle={true} className="p-3"/>
 
       <div className={`h-[100vh] w-14 mt-10 shadow-md`}>

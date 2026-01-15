@@ -118,16 +118,19 @@ function JobTracker() {
       <div className={`min-h-screen py-8 px-4 sm:px-6 lg:px-8 transition-all ${!isAuthenticated ? 'blur-md pointer-events-none' : ''}`}>
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              Job Application Tracker
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400">
-              Track and manage your job applications
-            </p>
+          <div className='flex w-[100%] justify-between'>
+            <div className="mb-8 ">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                Job Application Tracker
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400">
+                Track and manage your job applications
+              </p>
+            </div>
+            <JobStats applications={applications} />
           </div>
 
-          <JobStats applications={applications} />
+          {/* <JobStats applications={applications} /> */}
           <div className='flex justify-between items-center'>
             <JobFilters applications={applications} filter={filter} setFilter={setFilter} />
             <JobFormButton setShowForm={setShowForm} />

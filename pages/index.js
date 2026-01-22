@@ -1,4 +1,4 @@
-import Divider from "../components/ui/Divider";
+import Divider from "../components/ui/Divider.tsx";
 import Head from "next/head";
 import LandingPage from "../components/sections/heroSection";
 // import PostList from "../components/postList";

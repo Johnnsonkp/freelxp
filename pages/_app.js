@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 
-import Divider from '@/components/ui/Divider.jsx';
+import Divider from '@/components/ui/Divider.tsx';
 import Footer from '../components/sections/footer';
 import Head from 'next/head';
 import Header from '../components/ui/header/Header.jsx';

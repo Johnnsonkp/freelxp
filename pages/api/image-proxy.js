@@ -21,7 +21,6 @@ export default async function handler(req, res) {
     clearTimeout(timeoutId);
 
     if (!response.ok) {
-      console.error(`Image fetch failed: ${response.status} for ${url}`);
       res
         .status(response.status)
         .json({ error: "Failed to fetch image from origin", status: response.status });
@@ -48,12 +47,10 @@ export default async function handler(req, res) {
   } catch (err) {
     // Handle timeout specifically
     if (err.name === 'AbortError' || err.name === 'TimeoutError') {
-      console.error("Proxy timeout:", url);
       res.status(504).json({ error: "Gateway timeout", message: "Image request timed out" });
       return;
     }
     
-    console.error("Proxy error:", err);
     res.status(500).json({ error: "Proxy failed", details: err.message });
     return;
   }

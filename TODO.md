@@ -19,7 +19,7 @@
 - [ ] Add links on side panel
 
 ## 💡 Low Priority
-- [ ] Fix responsive across devices
+- [ ] Fix responsiveness across devices
 - [ ] Get futurastic icons for links
 - [x] Fix blog UI laytout 
 - [x] Rewrite profile bio (include masters)
